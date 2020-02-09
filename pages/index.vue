@@ -2,7 +2,7 @@
   <div class="home">
     <div class="home__search"></div>
     <section>
-      <h1 class="text-5xl">格式化工具</h1>
+      <h1 class="text-5xl">格式化工具 - test ci</h1>
       <div class="grid grid-cols-5 gap-5">
         <nuxt-link
           class="flex p-6 bg-white shadow-md hover:shadow-lg"
