@@ -3,7 +3,7 @@
     <h1 class="text-5xl">CSS格式化工具</h1>
     <div class="flex flex-row flex-1">
       <div class="flex flex-col flex-1 overflow-x-auto">
-        <label for="js-css-input">输入</label>
+        <label for="js-css-input">输入1</label>
         <textarea name="css-input" id="js-css-input"></textarea>
       </div>
       <button
