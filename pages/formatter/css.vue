@@ -21,7 +21,6 @@
 <script>
 import prettier from "prettier/standalone";
 import parserPostcss from "prettier/parser-postcss";
-import high from "highlight.js";
 
 export default {
   data() {
