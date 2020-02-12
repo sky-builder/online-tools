@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="home__search"></div>
-    <section>
+    <!-- <section>
       <h1 class="text-5xl">在线格式化工具</h1>
       <div class="grid grid-cols-5 gap-5">
         <nuxt-link
@@ -14,7 +14,7 @@
           <h4 class="text-xl truncate">{{ item.name }}</h4>
         </nuxt-link>
       </div>
-    </section>
+    </section> -->
     <section>
       <h1 class="text-5xl">在线图片处理工具</h1>
       <div class="grid grid-cols-5 gap-5">
