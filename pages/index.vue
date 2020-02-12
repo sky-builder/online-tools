@@ -65,8 +65,13 @@ export default {
       ],
       hashToolList: [
         {
-          name: 'MD5加密',
+          name: 'MD5 加密',
           href: "/hash/md5",
+          icon: ''
+        },
+        {
+          name: 'SHA-1 加密',
+          href: "/hash/sha1",
           icon: ''
         }
       ]
