@@ -30,6 +30,20 @@
         </a>
       </div>
     </section>
+    <section>
+      <h1 class="text-5xl">在线加密/解密工具</h1>
+      <div class="grid grid-cols-5 gap-5">
+        <a
+          class="flex p-6 bg-white shadow-md hover:shadow-lg"
+          v-for="item in hashToolList"
+          :key="item.name"
+          :href="item.href"
+        >
+          <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
+          <h4 class="text-xl truncate">{{ item.name }}</h4>
+        </a>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -47,6 +61,13 @@ export default {
         {
           name: "在线水印制作",
           href: "https:/www.ishuiyin.net"
+        }
+      ],
+      hashToolList: [
+        {
+          name: 'MD5加密',
+          href: "/hash/md5",
+          icon: ''
         }
       ]
     };
