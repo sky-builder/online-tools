@@ -49,7 +49,7 @@
       <div class="grid grid-cols-5 gap-5">
         <nuxt-link
           class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
-          v-for="item in encodeToolList"
+          v-for="item in convertToolList"
           :key="item.name"
           :to="item.href"
         >
@@ -77,7 +77,7 @@ export default {
           href: "https:/www.ishuiyin.net"
         }
       ],
-      encodeToolList: [
+      convertToolList: [
         {
           name: 'Base64 编码/解码',
           href: "/hash/base64",
@@ -86,6 +86,11 @@ export default {
           {
           name: 'URI 编码/解码',
           href: "/hash/uri",
+          icon: ''
+        },
+        {
+          name: '进制转换',
+          href: "/hash/base",
           icon: ''
         },
       ],
