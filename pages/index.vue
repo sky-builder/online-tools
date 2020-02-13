@@ -65,6 +65,11 @@ export default {
       ],
       hashToolList: [
         {
+          name: 'Base64 编码/解码',
+          href: "/hash/base64",
+          icon: ''
+        },
+        {
           name: 'MD5 加密',
           href: "/hash/md5",
           icon: ''
