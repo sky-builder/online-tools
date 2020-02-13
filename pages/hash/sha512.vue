@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线 SHA-1 加密</h1>
+    <h1 class="text-6xl">在线 SHA-512 加密</h1>
     <label for="js-input">输入字符串：</label>
     <textarea
       id="js-input"
@@ -31,17 +31,26 @@
       <span>{{ input2 }}</span>
     </div>
     <h2 class="text-4xl my-4">FAQ</h2>
-    <h3 class="text-2xl my-2">什么是 SHA-1 加密？</h3>
+    <h3 class="text-2xl my-2">什么是 SHA-512 加密？</h3>
     <p>
-       SHA-1 （英语：Secure Hash Algorithm 1，中文名：安全散列算法1）是一种密码散列函数，美国国家安全局设计，并由美国国家标准技术研究所（NIST）发布为联邦数据处理标准（FIPS）。 SHA-1 可以生成一个被称为消息摘要的160位（20字节）散列值，散列值通常的呈现形式为40个十六进制数。
-      <br />
+      SHA-512是SHA-2加密哈希函数的成员。
+      <br />SHA-2，名称来自于安全散列算法2（英语：Secure Hash Algorithm 2）的缩写，一种密码散列函数算法标准，由美国国家安全局研发，由美国国家标准与技术研究院（NIST）在2001年发布。属于SHA算法之一，是SHA-1的后继者。其下又可再分为六个不同的算法标准，包括了：SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224、SHA-512/256。
     </p>
-    <h3 class="text-2xl my-2">SHA-1 加密安全吗？</h3>
+    <h3 class="text-2xl my-2">SHA-512 加密安全吗？</h3>
+    <p>这些新的散列函数并没有接受像SHA-1一样的公众密码社群做详细的检验，所以它们的密码安全性还不被大家广泛的信任。Gilbert和Handschuh在2003年曾对这些新变种作过一些研究，声称他们没有找到弱点。</p>
+    <h3 class="text-2xl my-2">SHA-256 和 SHA-512 有什么区别？</h3>
     <p>
-       SHA-1 已经不再视为可抵御有充足资金、充足计算资源的攻击者。2005年，密码分析人员发现了对 SHA-1 的有效攻击方法，这表明该算法可能不够安全，不能继续使用，自2010年以来，许多组织建议用SHA-2或SHA-3来替换 SHA-1 。Microsoft、Google以及Mozilla都宣布，它们旗下的浏览器将在2017年前停止接受使用 SHA-1 算法签名的SSL证书。
-      2017年2月23日，CWI Amsterdam与Google宣布了一个成功的 SHA-1 碰撞攻击，发布了两份内容不同但 SHA-1 散列值相同的PDF文件作为概念证明。
+      SHA-256和SHA-512是很新的散列函数，前者以定义一个word为32位，后者则定义一个word为64位。它们分别使用了不同的偏移量，或用不同的常量，然而，实际上二者结构是相同的，只在循环运行的次数上有所差异。
+      <br />SHA-512所有的数字都是64位，
+      <br />SHA-512运行80次加密循环而非64次，
+      <br />SHA-512初始值和常量拉长成64位，以及
+      <br />二者比特的偏移量和循环位移量不同。
     </p>
-    <a class="text-blue-500 mt-2 inline-block hover:text-blue-700" href="https://zh.wikipedia.org/wiki/ SHA-1 " target="_blank"> SHA-1  中文维基百科</a>
+    <a
+      class="text-blue-500 mt-2 inline-block hover:text-blue-700"
+      href="https://zh.wikipedia.org/wiki/SHA-2"
+      target="_blank"
+    >SHA-2 中文维基百科</a>
   </div>
 </template>
 
@@ -72,7 +81,8 @@ export default {
     },
     handleClick() {
       this.input2 = this.input;
-      this.output = cryptojs.SHA1(this.input2).toString();
+      let output = cryptojs.SHA512(this.input2).toString();
+      this.output = output;
       this.isResultVisible = true;
     }
   }
