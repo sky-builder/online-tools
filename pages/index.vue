@@ -31,11 +31,25 @@
       </div>
     </section>
     <section>
-      <h1 class="text-5xl">在线加密/解密工具</h1>
+      <h1 class="text-5xl">在线加密工具</h1>
       <div class="grid grid-cols-5 gap-5">
         <a
           class="flex p-6 bg-white shadow-md hover:shadow-lg"
           v-for="item in hashToolList"
+          :key="item.name"
+          :href="item.href"
+        >
+          <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
+          <h4 class="text-xl truncate">{{ item.name }}</h4>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h1 class="text-5xl">在线编码/解码工具</h1>
+      <div class="grid grid-cols-5 gap-5">
+        <a
+          class="flex p-6 bg-white shadow-md hover:shadow-lg"
+          v-for="item in encodeToolList"
           :key="item.name"
           :href="item.href"
         >
@@ -63,12 +77,20 @@ export default {
           href: "https:/www.ishuiyin.net"
         }
       ],
-      hashToolList: [
+      encodeToolList: [
         {
           name: 'Base64 编码/解码',
           href: "/hash/base64",
           icon: ''
         },
+          {
+          name: 'URI 编码/解码',
+          href: "/hash/uri",
+          icon: ''
+        },
+      ],
+      hashToolList: [
+        
         {
           name: 'MD5 加密',
           href: "/hash/md5",
