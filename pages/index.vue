@@ -19,7 +19,7 @@
       <h1 class="text-5xl">在线图片处理工具</h1>
       <div class="grid grid-cols-5 gap-5">
         <a
-          class="flex p-6 bg-white shadow-md hover:shadow-lg"
+          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
           v-for="item in imageToolList"
           :key="item.name"
           :href="item.href"
@@ -33,29 +33,29 @@
     <section>
       <h1 class="text-5xl">在线加密工具</h1>
       <div class="grid grid-cols-5 gap-5">
-        <a
-          class="flex p-6 bg-white shadow-md hover:shadow-lg"
+        <nuxt-link
+          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
           v-for="item in hashToolList"
           :key="item.name"
-          :href="item.href"
+          :to="item.href"
         >
           <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
           <h4 class="text-xl truncate">{{ item.name }}</h4>
-        </a>
+        </nuxt-link>
       </div>
     </section>
     <section>
       <h1 class="text-5xl">在线编码/解码工具</h1>
       <div class="grid grid-cols-5 gap-5">
-        <a
-          class="flex p-6 bg-white shadow-md hover:shadow-lg"
+        <nuxt-link
+          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
           v-for="item in encodeToolList"
           :key="item.name"
-          :href="item.href"
+          :to="item.href"
         >
           <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
           <h4 class="text-xl truncate">{{ item.name }}</h4>
-        </a>
+        </nuxt-link>
       </div>
     </section>
   </div>
