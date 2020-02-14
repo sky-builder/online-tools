@@ -14,7 +14,7 @@
           <h4 class="text-xl truncate">{{ item.name }}</h4>
         </nuxt-link>
       </div>
-    </section> -->
+    </section>-->
     <section>
       <h1 class="text-5xl">在线图片处理工具</h1>
       <div class="grid grid-cols-5 gap-5">
@@ -58,6 +58,20 @@
         </nuxt-link>
       </div>
     </section>
+      <section>
+      <h1 class="text-5xl">在线文本工具</h1>
+      <div class="grid grid-cols-5 gap-5">
+        <nuxt-link
+          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
+          v-for="item in textToolList"
+          :key="item.name"
+          :to="item.href"
+        >
+          <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
+          <h4 class="text-xl truncate">{{ item.name }}</h4>
+        </nuxt-link>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -71,6 +85,13 @@ export default {
           href: "/formatter/css"
         }
       ],
+      textToolList: [
+        {
+          name: "字数统计",
+          href: "/text/word-counter",
+          icon: ""
+        }
+      ],
       imageToolList: [
         {
           name: "在线水印制作",
@@ -79,42 +100,41 @@ export default {
       ],
       convertToolList: [
         {
-          name: 'Base64 编码/解码',
+          name: "Base64 编码/解码",
           href: "/hash/base64",
-          icon: ''
-        },
-          {
-          name: 'URI 编码/解码',
-          href: "/hash/uri",
-          icon: ''
+          icon: ""
         },
         {
-          name: '进制转换',
-          href: "/hash/base",
-          icon: ''
+          name: "URI 编码/解码",
+          href: "/hash/uri",
+          icon: ""
         },
+        {
+          name: "进制转换",
+          href: "/hash/base",
+          icon: ""
+        }
       ],
       hashToolList: [
-        
         {
-          name: 'MD5 加密',
+          name: "MD5 加密",
           href: "/hash/md5",
-          icon: ''
+          icon: ""
         },
         {
-          name: 'SHA-1 加密',
+          name: "SHA-1 加密",
           href: "/hash/sha1",
-          icon: ''
+          icon: ""
         },
         {
-          name: 'SHA-256 加密',
+          name: "SHA-256 加密",
           href: "/hash/sha256",
-          icon: ''
+          icon: ""
         },
         {
-          name: 'SHA-512 加密',
+          name: "SHA-512 加密",
           href: "/hash/sha512",
-          icon: ''
+          icon: ""
         }
       ]
     };
