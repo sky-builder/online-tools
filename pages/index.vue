@@ -25,7 +25,6 @@
           :href="item.href"
           target="_blank"
         >
-          <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt />
           <h4 class="text-xl truncate">{{ item.name }}</h4>
         </a>
       </div>
@@ -96,6 +95,10 @@ export default {
         {
           name: "在线水印制作",
           href: "https:/www.ishuiyin.net"
+        },
+        {
+          name: '在线查看图片EXIF信息',
+          href: '/image/exif-viewer'
         }
       ],
       convertToolList: [
