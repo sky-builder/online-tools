@@ -116,6 +116,11 @@ export default {
           name: "进制转换",
           href: "/hash/base",
           icon: ""
+        },
+        {
+          name: "unix时间戳转换",
+          href: "/converter/unix-time-stamp",
+          icon: ""
         }
       ],
       hashToolList: [
