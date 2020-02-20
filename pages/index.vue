@@ -148,7 +148,12 @@ export default {
           name: "SHA-512 加密",
           href: "/hash/sha512",
           icon: ""
-        }
+        },
+        {
+          name: "HMAC-MD5 加密",
+          href: "/hash/hmac-md5",
+          icon: ""
+        },
       ]
     };
   }
