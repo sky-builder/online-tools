@@ -30,7 +30,7 @@
       </div>
     </section>
     <section>
-      <h1 class="text-5xl">在线加密工具</h1>
+      <h1 class="text-5xl">在线加密/解密工具</h1>
       <div class="grid grid-cols-5 gap-5">
         <nuxt-link
           class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
@@ -152,6 +152,11 @@ export default {
         {
           name: "HMAC-MD5 加密",
           href: "/hash/hmac-md5",
+          icon: ""
+        },
+        {
+          name: "AES 加密/解密",
+          href: "/hash/aes",
           icon: ""
         },
       ]
