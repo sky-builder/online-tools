@@ -89,6 +89,11 @@ export default {
           name: "字数统计",
           href: "/text/word-counter",
           icon: ""
+        },
+        {
+          name: '在线lorem ipsum生成',
+          href: '/text/lorem-ipsum-generator',
+          icon: ''
         }
       ],
       imageToolList: [
