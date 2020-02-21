@@ -174,6 +174,11 @@ export default {
           href: "/hash/aes",
           icon: ""
         },
+        {
+          name: "DES 加密/解密",
+          href: "/hash/des",
+          icon: ""
+        },
       ]
     };
   }
