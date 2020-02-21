@@ -179,6 +179,11 @@ export default {
           href: "/hash/des",
           icon: ""
         },
+        {
+          name: "Rabbit 加密/解密",
+          href: "/hash/rabbit",
+          icon: ""
+        },
       ]
     };
   }
