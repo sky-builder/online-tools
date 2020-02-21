@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <td class="border border-gray-300 p-2">
-            <label for="js-time-input">当前时间(例如: 2020-01-01 12:00:00)</label>
+            <label for="js-time-input">时间(例如: 2020-01-01 12:00:00)</label>
           </td>
           <td class="border border-gray-300 p-2">
             <input type="text" v-model="timeInput" class="border border-gray-500" />
