@@ -186,4 +186,13 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+.border-gray {
+  @apply border border-gray-300;
+}
+.btn-blue {
+  @apply px-2 py-1 text-white bg-blue-500;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
 </style>
