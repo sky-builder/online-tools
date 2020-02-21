@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线 SHA-1 加密</h1>
+    <h1 class="text-6xl">在线 HMAC-SHA1 加密</h1>
     <label for="js-key">密匙</label>
     <br />
     <input type="text" class="border border-gray-300" v-model="key" />
