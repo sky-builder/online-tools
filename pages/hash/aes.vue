@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-6xl">在线AES加密/解密</h1>
     <label for="js-key">密匙</label>
     <br />
     <input type="text" name="key" id="js-key" v-model="key" class="border-gray" />
