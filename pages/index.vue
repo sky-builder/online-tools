@@ -155,6 +155,11 @@ export default {
           icon: ""
         },
         {
+          name: "HMAC-SHA1 加密",
+          href: "/hash/hmac-sha1",
+          icon: ""
+        },
+        {
           name: "AES 加密/解密",
           href: "/hash/aes",
           icon: ""
