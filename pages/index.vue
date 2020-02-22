@@ -104,6 +104,10 @@ export default {
         {
           name: "在线查看图片EXIF信息",
           href: "/image/exif-viewer"
+        },
+        {
+          name: '图片转base64',
+          href: '/image/image2base64'
         }
       ],
       convertToolList: [
