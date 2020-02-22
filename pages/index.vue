@@ -184,6 +184,11 @@ export default {
           href: "/hash/rabbit",
           icon: ""
         },
+        {
+          name: "RC4 加密/解密",
+          href: "/hash/rc4",
+          icon: ""
+        },
       ]
     };
   }
