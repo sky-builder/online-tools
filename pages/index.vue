@@ -57,7 +57,7 @@
         </nuxt-link>
       </div>
     </section>
-      <section>
+    <section>
       <h1 class="text-5xl">在线文本工具</h1>
       <div class="grid grid-cols-5 gap-5">
         <nuxt-link
@@ -91,9 +91,9 @@ export default {
           icon: ""
         },
         {
-          name: '在线lorem ipsum生成',
-          href: '/text/lorem-ipsum-generator',
-          icon: ''
+          name: "在线lorem ipsum生成",
+          href: "/text/lorem-ipsum-generator",
+          icon: ""
         }
       ],
       imageToolList: [
@@ -102,8 +102,8 @@ export default {
           href: "https:/www.ishuiyin.net"
         },
         {
-          name: '在线查看图片EXIF信息',
-          href: '/image/exif-viewer'
+          name: "在线查看图片EXIF信息",
+          href: "/image/exif-viewer"
         }
       ],
       convertToolList: [
@@ -180,6 +180,11 @@ export default {
           icon: ""
         },
         {
+          name: "3DES(Triple DES)加密/解密",
+          href: "/hash/triple-des",
+          icon: ""
+        },
+        {
           name: "Rabbit 加密/解密",
           href: "/hash/rabbit",
           icon: ""
@@ -188,7 +193,7 @@ export default {
           name: "RC4 加密/解密",
           href: "/hash/rc4",
           icon: ""
-        },
+        }
       ]
     };
   }
