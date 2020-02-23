@@ -71,6 +71,20 @@
         </nuxt-link>
       </div>
     </section>
+    <section>
+      <h1 class="text-5xl">生活工具</h1>
+      <div class="grid grid-cols-5 gap-5">
+        <nuxt-link
+          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
+          v-for="item in lifeToolList"
+          :key="item.name"
+          :to="item.href"
+        >
+          <!-- <img class="w-12 h-12 flex-none" src="~/assets/icons/image.png" alt /> -->
+          <h4 class="text-xl truncate">{{ item.name }}</h4>
+        </nuxt-link>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -78,6 +92,12 @@
 export default {
   data() {
     return {
+      lifeToolList: [
+        {
+          name: '历史上的今天',
+          href: '/life/history-today'
+        }
+      ],
       formatToolList: [
         {
           name: "CSS格式化",
