@@ -96,6 +96,10 @@ export default {
         {
           name: '历史上的今天',
           href: '/life/history-today'
+        },
+        {
+          name: '每日图片',
+          href: '/life/daily-photo'
         }
       ],
       formatToolList: [

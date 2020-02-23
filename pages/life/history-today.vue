@@ -49,11 +49,10 @@
 let day = new Date().getDate();
 let month = new Date().getMonth() + 1;
 let today = `${month}月${day}日`;
-const todayData = require(`@/assets/history-today/${today}.json`);
 export default {
   data() {
     return {
-      historyToday: todayData,
+      historyToday: require(`@/assets/history-today/${today}.json`),
       today: today,
       monthDayMap: {
         1: 31,
