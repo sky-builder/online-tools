@@ -98,9 +98,9 @@ export default {
           href: '/life/history-today'
         },
         {
-          name: '每日图片',
-          href: '/life/daily-photo'
-        }
+          name: 'unsplash 每日图片',
+          href: '/life/unsplash-daily-photo'
+        },
       ],
       formatToolList: [
         {
