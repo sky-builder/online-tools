@@ -3,7 +3,7 @@
     <div class="app__header shadow-md">
       <a href="/">小蜜蜂工具网</a>
     </div>
-    <nuxt class="app__body  my-6" />
+    <nuxt />
     <div class="app__footer border-t border-gray-200">©小蜜蜂工具网 2020</div>
   </div>
 </template>
@@ -42,7 +42,7 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
- }
+}
 
 .app__header, .app__footer {
   height: 60px;

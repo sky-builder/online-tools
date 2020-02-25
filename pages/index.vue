@@ -101,6 +101,10 @@ export default {
           name: 'unsplash 每日图片',
           href: '/life/unsplash-daily-photo'
         },
+        {
+          name: "bing每日图片",
+          href: '/life/bing-daily-photo'
+        }
       ],
       formatToolList: [
         {
