@@ -13,7 +13,7 @@ export default {
     ],
     script: [
       {
-        src: "/codemirror.js"
+        src: "/ace-min/ace.js"
       },
       {
         src: "/css.js"
