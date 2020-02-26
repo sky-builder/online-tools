@@ -18,7 +18,8 @@
     "exif-js": "^2.3.0",
     "js-beautify": "^1.10.3",
     "lorem-ipsum": "^2.0.3",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "uglify-es": "^3.3.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

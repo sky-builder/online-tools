@@ -117,6 +117,10 @@ export default {
         {
           name: "JavaScript格式化",
           href: '/formatter/js'
+        },
+        {
+          name: 'JavaScript压缩',
+          href: '/formatter/minify-js'
         }
       ],
       textToolList: [
