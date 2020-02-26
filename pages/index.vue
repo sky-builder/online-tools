@@ -121,6 +121,10 @@ export default {
         {
           name: 'JavaScript压缩',
           href: '/formatter/minify-js'
+        },
+        {
+          name: 'JSON美化',
+          href: '/formatter/json'
         }
       ],
       textToolList: [
