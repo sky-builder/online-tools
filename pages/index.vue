@@ -109,6 +109,10 @@ export default {
         {
           name: "CSS格式化",
           href: "/formatter/css"
+        },
+        {
+          name: "HTML格式化",
+          href: '/formatter/html'
         }
       ],
       textToolList: [
