@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .editor-wrapper {
   height: 50vh;
 }
