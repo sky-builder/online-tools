@@ -1,0 +1,72 @@
+{
+  "pa": {
+    "name": "帕斯卡",
+    "unit": "Pa",
+    "scale": 1
+  },
+  "hpa": {
+    "name": "百帕",
+    "unit": "hPa",
+    "scale": 100
+  },
+  "kpa": {
+    "name": "千帕",
+    "unit": "kPa",
+    "scale": 1000
+  },
+  "bar": {
+    "name": "巴",
+    "unit": "bar",
+    "scale": 1e5
+  },
+  "mbar": {
+    "name": "毫巴",
+    "unit": "mBar",
+    "scale": 100
+  },
+  "atm": {
+    "name": "标准大气压",
+    "unit": "atm",
+    "scale": 101325
+  },
+  "mmhg": {
+    "name": "毫米汞柱",
+    "unit": "mmHg",
+    "scale": 133.32237
+  },
+  "mmh2o": {
+    "name": "毫米水柱",
+    "unit": "mmH2O",
+    "scale": 9.8066136
+  },
+  "inHg": {
+    "name": "英寸汞柱",
+    "unit": "inHg",
+    "scale": 3386.3882
+  },
+  "inAg": {
+    "name": "英寸水柱",
+    "unit": "inAg",
+    "scale": 249.082
+  },
+  "kgfcm2": {
+    "name": "千克力每平方厘米",
+    "unit": "kgf/cm2",
+    "scale": 98066.5
+  },
+  "kgfm2": {
+    "name": "千克力每平方米",
+    "unit": "kgf/m2",
+    "scale": 9.80665
+  },
+  "lbfin2": {
+    "name": "磅力每平方英寸",
+    "unit": "lbf/in2",
+    "scale": 6894.757
+  },
+  "lbfft2": {
+    "name": "磅力每平方英尺",
+    "unit": "lbf/ft2",
+    "scale": 47.880257
+  }
+}
