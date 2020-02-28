@@ -1,0 +1,122 @@
+{
+  "m3": {
+    "name": "立方米",
+    "unit": "m3",
+    "scale": 1
+  },
+  "dm3": {
+    "name": "立方分米",
+    "unit": "dm3",
+    "scale": 1e-3
+  },
+  "cm3": {
+    "name": "立方厘米",
+    "unit": "cm3",
+    "scale": 1e-6
+  },
+  "mm3": {
+    "name": "立方毫米",
+    "unit": "mm3",
+    "scale": 1e-9
+  },
+  "l": {
+    "name": "升",
+    "unit": "L",
+    "scale": 1e-3
+  },
+  "dal": {
+    "name": "十升",
+    "unit": "dal",
+    "scale": 1e-2
+  },
+  "dl": {
+    "name": "分升",
+    "unit": "dl",
+    "scale": 1e-4
+  },
+  "cl": {
+    "name": "厘升",
+    "unit": "cl",
+    "scale": 1e-5
+  },
+  "ml": {
+    "name": "毫升",
+    "unit": "ml",
+    "scale": 1e-6
+  },
+  "ft3": {
+    "name": "立方英尺",
+    "unit": "ft3",
+    "scale": 0.02831685
+  },
+  "in3": {
+    "name": "立方英寸",
+    "unit": "in3",
+    "scale": 0.00001639
+  },
+  "yd3": {
+    "name": "立方码",
+    "unit": "yd3",
+    "scale": 0.76455486
+  },
+  "en_minim": {
+    "name": "【英制】量滴",
+    "unit": "minim",
+    "scale": 0.0592e-6
+  },
+  "en_fluidScruple": {
+    "name": "【英制】液量吩",
+    "unit": "fluid scruple",
+    "scale": 1.18e-6
+  },
+  "en_fluidDram": {
+    "name": "【英制】液量打兰",
+    "unit": "fluid dram",
+    "scale": 3.55e-6
+  },
+  "en_yeliangangsi": {
+    "name": "【英制】液量盎司",
+    "unit": "",
+    "scale": 28.4e-6
+  },
+  "en_gill": {
+    "name": "【英制】及耳",
+    "unit": "gill",
+    "scale": 142e-6
+  },
+  "en_pint": {
+    "name": "【英制】品脱",
+    "unit": "pint",
+    "scale": 568e-6
+  },
+  "en_quart": {
+    "name": "【英制】夸脱",
+    "unit": "quart",
+    "scale": 1.14e-3
+  },
+  "en_gallon": {
+    "name": "【英制】加仑",
+    "unit": "gallon",
+    "scale": 4.55e-3
+  },
+  "en_peck": {
+    "name": "【英制】佩克",
+    "unit": "peck",
+    "scale": 9.09e-3
+  },
+  "en_kenning": {
+    "name": "【英制】坎宁",
+    "unit": "kenning",
+    "scale": 18.2e-3
+  },
+  "en_bushel": {
+    "name": "【英制】蒲式耳",
+    "unit": "bushel",
+    "scale": 36.4e-3
+  },
+  "en_quarter": {
+    "name": "【英制】夸特",
+    "unit": "quarter",
+    "scale": 2.91e-3
+  }
+}

@@ -189,6 +189,10 @@ export default {
         {
           name: "面积单位转换",
           href: '/converter/square-converter'
+        },
+        {
+          name: "体积单位转换",
+          href: "/converter/capacity-converter"
         }
       ],
       hashToolList: [
