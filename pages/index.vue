@@ -177,6 +177,10 @@ export default {
         {
           name: '功率单位转换',
           href: '/converter/power-converter'
+        },
+        {
+          name: "压力单位转换",
+          href: '/converter/pressure-converter'
         }
       ],
       hashToolList: [
