@@ -185,6 +185,10 @@ export default {
         {
           name: '温度单位转换',
           href: '/converter/temprature-converter'
+        },
+        {
+          name: "面积单位转换",
+          href: '/converter/square-converter'
         }
       ],
       hashToolList: [

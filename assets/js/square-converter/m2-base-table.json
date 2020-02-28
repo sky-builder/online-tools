@@ -1,0 +1,62 @@
+{
+  "m2": {
+    "name": "平方米",
+    "unit": "m2",
+    "scale": 1
+  },
+  "cm2": {
+    "name": "平方厘米",
+    "unit": "cm2",
+    "scale": 0.0001
+  },
+  "dm2": {
+    "name": "平方分米",
+    "unit": "dm2",
+    "scale": 0.01
+  },
+  "mm2": {
+    "name": "平方毫米",
+    "unit": "mm2",
+    "scale": 0.000001
+  },
+  "km2": {
+    "name": "平方公里",
+    "unit": "km2",
+    "scale": 1000000
+  },
+  "shimu": {
+    "name": "市亩",
+    "unit": "",
+    "scale": 666.6666667
+  },
+  "yingmu": {
+    "name": "英亩",
+    "unit": "",
+    "scale": 4046.8564224
+  },
+  "ha": {
+    "name": "公顷",
+    "unit": "ha",
+    "scale": 10000
+  },
+  "in2": {
+    "name": "平方英寸",
+    "unit": "sqin",
+    "scale": 0.00064516
+  },
+  "ft2": {
+    "name": "平方英尺",
+    "unit": "sqft",
+    "scale": 0.092903
+  },
+  "yd2": {
+    "name": "平方码",
+    "unit": "sqyd",
+    "scale": 0.8361274
+  },
+  "rd2": {
+    "name": "平方竿",
+    "unit": "sq rd",
+    "scale": 25.2928526
+  }
+}
