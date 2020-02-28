@@ -173,6 +173,10 @@ export default {
           name: "unix时间戳转换",
           href: "/converter/unix-time-stamp",
           icon: ""
+        },
+        {
+          name: '功率单位转换',
+          href: '/converter/power-converter'
         }
       ],
       hashToolList: [

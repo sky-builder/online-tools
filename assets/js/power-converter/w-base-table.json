@@ -1,0 +1,90 @@
+{
+  "w": {
+    "name": "瓦",
+    "unit": "w",
+    "scale": 1,
+    "wiki": "https://zh.wikipedia.org/zh-hans/%E7%93%A6%E7%89%B9"
+  },
+  "kw": {
+    "name": "千瓦",
+    "unit": "kW",
+    "scale": 1000,
+    "wiki": "https://zh.wikipedia.org/zh-hans/%E7%93%A6%E7%89%B9"
+  },
+
+  "j": {
+    "name": "焦耳",
+    "unit": "J",
+    "scale": 1,
+    "wiki": "https://zh.wikipedia.org/wiki/%E7%84%A6%E8%80%B3"
+  },
+  "btu": {
+    "name": "英热单位",
+    "unit": "BTU",
+    "scale": 1055.07491,
+    "wiki": "https://zh.wikipedia.org/wiki/%E8%8B%B1%E7%83%AD%E5%8D%95%E4%BD%8D"
+  },
+  "hpi": {
+    "name": "英制马力",
+    "unit": "hpi",
+    "scale": 745.712172,
+    "wiki": "https://zh.wikipedia.org/wiki/%E9%A6%AC%E5%8A%9B"
+  },
+  "hpm": {
+    "name": "公制马力",
+    "unit": "hmp",
+    "scale": 735.49875,
+    "wiki": "https://zh.wikipedia.org/wiki/%E9%A6%AC%E5%8A%9B"
+  },
+  "hpe": {
+    "name": "电制马力",
+    "unit": "hpe",
+    "scale": 746,
+    "wiki": "https://zh.wikipedia.org/wiki/%E9%A6%AC%E5%8A%9B"
+  },
+  "hps": {
+    "name": "锅炉马力",
+    "unit": "hps",
+    "scale": 9809.5,
+    "wiki": "https://zh.wikipedia.org/wiki/%E9%A6%AC%E5%8A%9B"
+  },
+  "cal": {
+    "name": "卡路里",
+    "unit": "cal",
+    "scale": 4.184,
+    "wiki": "https://zh.wikipedia.org/wiki/%E5%8D%A1%E8%B7%AF%E9%87%8C"
+  },
+  "kcal": {
+    "name": "千卡",
+    "unit": "kcal",
+    "scale": 4184.1004,
+    "wiki": "https://zh.wikipedia.org/wiki/%E5%8D%A1%E8%B7%AF%E9%87%8C"
+  },
+  "erg": {
+    "name": "尔格",
+    "unit": "erg",
+    "scale": 1e-7,
+    "wiki": "https://zh.wikipedia.org/wiki/%E7%88%BE%E6%A0%BC"
+  },
+  "ev": {
+    "name": "电子伏特",
+    "unit": "ev",
+    "scale": 1.602176634e-19,
+    "wiki": "https://zh.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E4%BC%8F%E7%89%B9"
+  },
+  "ftlbs": {
+    "name": "英尺·磅/秒",
+    "unit": "ft·lb/s",
+    "scale": 1.35574837
+  },
+  "kgms": {
+    "name": "公斤·米/秒",
+    "unit": "kg·m/s",
+    "scale": 9.8039215
+  },
+  "Nms": {
+    "name": "牛顿·米/秒",
+    "unit": "N·m/s",
+    "scale": 1
+  }
+}
