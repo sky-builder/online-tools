@@ -193,6 +193,10 @@ export default {
         {
           name: "体积单位转换",
           href: "/converter/capacity-converter"
+        },
+        {
+          name: "速度单位转换",
+          href: '/converter/speed-converter'
         }
       ],
       hashToolList: [

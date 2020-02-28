@@ -1,0 +1,57 @@
+{
+  "ms": {
+    "name": "米/秒",
+    "unit": "M/s",
+    "scale": 1
+  },
+  "kms": {
+    "name": "千米/秒",
+    "unit": "KM/s",
+    "scale": 1e3
+  },
+  "kmh": {
+    "name": "千米/小时",
+    "unit": "km/h",
+    "scale": 0.27777777777778
+  },
+  "mms": {
+    "name": "毫米/秒",
+    "unit": "mm/s",
+    "scale": 1e-3
+  },
+  "ums": {
+    "name": "微米/秒",
+    "unit": "um/s",
+    "scale": 1e-6
+  },
+  "mis": {
+    "name": "英里/秒",
+    "unit": "mi/s",
+    "scale": 1609.344
+  },
+  "mih": {
+    "name": "英里/小时",
+    "unit": "mi/h",
+    "scale": 0.44704
+  },
+  "fts": {
+    "name": "英尺/秒",
+    "unit": "ft/s",
+    "scale": 0.3048
+  },
+  "knot": {
+    "name": "节",
+    "unit": "knot",
+    "scale": 0.51444444444444
+  },
+  "c": {
+    "name": "光速",
+    "unit": "c",
+    "scale": 299792460
+  },
+  "mach": {
+    "name": "音速（马赫）",
+    "unit": "mach",
+    "scale": 340.3
+  }
+}

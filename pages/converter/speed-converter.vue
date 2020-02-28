@@ -1,0 +1,46 @@
+<template>
+  <div>
+    <table>
+      <tbody>
+        <tr v-for="(item) in unitList" :key="item.key">
+          <td>
+            <label :for="'js-' + item.key">{{ item.name }}({{item.unit}})</label>
+          </td>
+          <td>
+            <input
+              class="border-gray w-64"
+              type="text"
+              name
+              :id="'js-' + item.key"
+              v-model="keyValueMap[item.key]"
+            />
+          </td>
+          <td>
+            <button class="btn-blue" @click="handleInput(item)">转换</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+import speedConverterMixin from "@/assets/js/speed-converter/index";
+export default {
+  mixins: [speedConverterMixin],
+  data() {
+    return {};
+  },
+  methods: {
+    handleInput(item) {
+      let { key } = item;
+      let value = this.keyValueMap[key];
+      let result = this.doConvert(value, key);
+      this.keyValueMap = Object.assign({}, result);
+    }
+  }
+};
+</script>
+
+<style>
+</style>
