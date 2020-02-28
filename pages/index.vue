@@ -181,6 +181,10 @@ export default {
         {
           name: "压力单位转换",
           href: '/converter/pressure-converter'
+        },
+        {
+          name: '温度单位转换',
+          href: '/converter/temprature-converter'
         }
       ],
       hashToolList: [
