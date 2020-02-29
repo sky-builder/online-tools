@@ -1,0 +1,117 @@
+{
+  "g": {
+    "name": "克",
+    "unit": "g",
+    "scale": 1
+  },
+  "mg": {
+    "name": "毫克",
+    "unit": "1000",
+    "scale": 1e-3
+  },
+  "kg": {
+    "name": "千克",
+    "unit": "kg",
+    "scale": 1e3
+  },
+  "t": {
+    "name": "吨",
+    "unit": "t",
+    "scale": 1e6
+  },
+  "dan": {
+    "name": "【市制】担",
+    "unit": "",
+    "scale": 50000
+  },
+  "jin": {
+    "name": "【市制】斤",
+    "unit": "",
+    "scale": 500
+  },
+  "liang": {
+    "name": "【市制】两",
+    "unit": "",
+    "scale": 50
+  },
+  "qian": {
+    "name": "【市制】钱",
+    "unit": "",
+    "scale": 5
+  },
+  "fen": {
+    "name": "【市制】分",
+    "unit": "",
+    "scale": 0.5
+  },
+  "li": {
+    "name": "【市制】厘",
+    "unit": "",
+    "scale": 0.05
+  },
+  "grain": {
+    "name": "【英制】格令",
+    "unit": "grain",
+    "scale": 0.06479891
+  },
+  "drachm": {
+    "name": "【英制】打兰",
+    "unit": "drachm",
+    "scale": 1.77
+  },
+  "ounce": {
+    "name": "【英制】盎司",
+    "unit": "ounce",
+    "scale": 28.349523125
+  },
+  "pound": {
+    "name": "【英制】磅",
+    "unit": "pound",
+    "scale": 453.59237
+  },
+  "stone": {
+    "name": "【英制】英石",
+    "unit": "stone",
+    "scale": 6350
+  },
+  "quarter": {
+    "name": "【英制】夸特",
+    "unit": "quarter",
+    "scale": 12700
+  },
+  "hundred_weight": {
+    "name": "【英制】英担",
+    "unit": "hundred weight",
+    "scale": 50800
+  },
+  "ton": {
+    "name": "【英制】英吨",
+    "unit": "long ton",
+    "scale": 1016000
+  },
+  "short_ton": {
+    "name": "【美制】美吨",
+    "unit": "short ton",
+    "scale": 907000
+  },
+  "jhz_pound": {
+    "name": "【金衡制】磅",
+    "unit": "",
+    "scale": 373.24172
+  },
+  "jhz_ounce": {
+    "name": "【金衡制】盎司",
+    "unit": "",
+    "scale": 31.103477
+  },
+  "jhz_bv": {
+    "name": "【金衡制】本尼维特",
+    "unit": "",
+    "scale": 1.5551738
+  },
+  "jhz_grain": {
+    "name": "【金衡制】格令",
+    "unit": "",
+    "scale": 0.06479891
+  }
+}

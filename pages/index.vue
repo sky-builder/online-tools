@@ -199,8 +199,12 @@ export default {
           href: '/converter/speed-converter'
         },
         {
-          name: "长度转换单位",
+          name: "长度单位转换",
           href: '/converter/length-converterd'
+        },
+        {
+          name: "重量单位转换",
+          href: '/converter/quality-converter'
         }
       ],
       hashToolList: [
