@@ -197,6 +197,10 @@ export default {
         {
           name: "速度单位转换",
           href: '/converter/speed-converter'
+        },
+        {
+          name: "长度转换单位",
+          href: '/converter/length-converterd'
         }
       ],
       hashToolList: [

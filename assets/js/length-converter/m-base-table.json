@@ -1,0 +1,107 @@
+{
+  "m": {
+    "name": "米",
+    "unit": "m",
+    "scale": 1
+  },
+  "dm": {
+    "name": "分米",
+    "unit": "dm",
+    "scale": 0.1
+  },
+  "cm": {
+    "name": "厘米",
+    "unit": "cm",
+    "scale": 0.01
+  },
+  "mm": {
+    "name": "毫米",
+    "unit": "mm",
+    "scale": 1e-3
+  },
+  "um": {
+    "name": "微米",
+    "unit": "um",
+    "scale": 1e-6
+  },
+  "chi": {
+    "name": "尺",
+    "unit": "",
+    "scale": 0.333333333
+  },
+  "zhang": {
+    "name": "丈",
+    "unit": "",
+    "scale": 3.333333333
+  },
+  "yin": {
+    "name": "引",
+    "unit": "",
+    "scale": 33.333333333
+  },
+  "li": {
+    "name": "里",
+    "unit": "",
+    "scale": 500
+  },
+  "cun": {
+    "name": "寸",
+    "unit": "",
+    "scale": 0.0333333333
+  },
+  "fen": {
+    "name": "分",
+    "unit": "",
+    "scale": 0.00333333333
+  },
+  "厘": {
+    "name": "厘",
+    "unit": "",
+    "scale": 0.0003333333
+  },
+  "hao": {
+    "name": "毫",
+    "unit": "",
+    "scale": 0.00003333333
+  },
+  "inch": {
+    "name": "英寸",
+    "unit": "in",
+    "scale": 0.0254
+  },
+  "feet": {
+    "name": "英尺",
+    "unit": "ft",
+    "scale": 0.3048
+  },
+  "yard": {
+    "name": "码",
+    "unit": "yd",
+    "scale": 0.9144
+  },
+  "fathom": {
+    "name": "英寻",
+    "unit": "fathom",
+    "scale": 1.8288
+  },
+  "chain": {
+    "name": "链",
+    "unit": "chain",
+    "scale": 20.1168
+  },
+  "furlong": {
+    "name": "浪",
+    "unit": "furlong",
+    "scale": 201.168
+  },
+  "mile": {
+    "name": "英里",
+    "unit": "mile",
+    "scale": 1609.344
+  },
+  "NM": {
+    "name": "海里",
+    "unit": "Nautical mile",
+    "scale": 1852
+  }
+}
