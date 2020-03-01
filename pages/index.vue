@@ -165,7 +165,11 @@ export default {
         },
         {
           name: "传图识色",
-          href: '/image/get-palette'
+          href: "/image/get-palette"
+        },
+        {
+          name: "ig图片下载",
+          href: '/image/instagram-image-downloader'
         }
       ],
       convertToolList: [

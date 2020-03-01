@@ -3529,6 +3529,11 @@ file-loader@^4.3.0:
     loader-utils "^1.2.3"
     schema-utils "^2.5.0"
 
+file-type@^10.10.0:
+  version "10.11.0"
+  resolved "http://r.cnpmjs.org/file-type/download/file-type-10.11.0.tgz#2961d09e4675b9fb9a3ee6b69e9cd23f43fd1890"
+  integrity sha1-KWHQnkZ1ufuaPua2npzSP0P9GJA=
+
 file-uri-to-path@1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/file-uri-to-path/download/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -4106,6 +4111,13 @@ ignore@^5.1.1, ignore@^5.1.4:
   version "5.1.4"
   resolved "http://r.cnpmjs.org/ignore/download/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha1-hLez2+ZFUrbvDsqZ9nQ9vsbZet8=
+
+image-type@^4.1.0:
+  version "4.1.0"
+  resolved "http://r.cnpmjs.org/image-type/download/image-type-4.1.0.tgz#72a88d64ff5021371ed67b9a466442100be57cd1"
+  integrity sha1-cqiNZP9QITce1nuaRmRCEAvlfNE=
+  dependencies:
+    file-type "^10.10.0"
 
 import-cwd@^2.0.0:
   version "2.1.0"
