@@ -162,6 +162,10 @@ export default {
         {
           name: "图片转base64",
           href: "/image/image2base64"
+        },
+        {
+          name: "传图识色",
+          href: '/image/get-palette'
         }
       ],
       convertToolList: [
