@@ -17,15 +17,25 @@
     <section>
       <h1 class="text-5xl">在线图片处理工具</h1>
       <div class="grid grid-cols-5 gap-5">
-        <a
-          class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
-          v-for="item in imageToolList"
-          :key="item.name"
-          :href="item.href"
-          target="_blank"
-        >
-          <h4 class="text-xl truncate">{{ item.name }}</h4>
-        </a>
+        <template v-for="item in imageToolList">
+          <a
+            v-if="item.isLink"
+            class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
+            :key="item.name"
+            :href="item.href"
+            target="_blank"
+          >
+            <h4 class="text-xl truncate">{{ item.name }}</h4>
+          </a>
+          <nuxt-link
+            v-else
+            class="flex p-6 bg-white shadow-md hover:shadow-lg hover:underline"
+            :key="item.name"
+            :to="item.href"
+          >
+            <h4 class="text-xl truncate">{{ item.name }}</h4>
+          </nuxt-link>
+        </template>
       </div>
     </section>
     <section>
@@ -93,16 +103,16 @@ export default {
     return {
       lifeToolList: [
         {
-          name: '历史上的今天',
-          href: '/life/history-today'
+          name: "历史上的今天",
+          href: "/life/history-today"
         },
         {
-          name: 'unsplash 每日图片',
-          href: '/life/unsplash-daily-photo'
+          name: "unsplash 每日图片",
+          href: "/life/unsplash-daily-photo"
         },
         {
           name: "bing每日图片",
-          href: '/life/bing-daily-photo'
+          href: "/life/bing-daily-photo"
         }
       ],
       formatToolList: [
@@ -112,19 +122,19 @@ export default {
         },
         {
           name: "HTML格式化",
-          href: '/formatter/html'
+          href: "/formatter/html"
         },
         {
           name: "JavaScript格式化",
-          href: '/formatter/js'
+          href: "/formatter/js"
         },
         {
-          name: 'JavaScript压缩',
-          href: '/formatter/minify-js'
+          name: "JavaScript压缩",
+          href: "/formatter/minify-js"
         },
         {
-          name: 'JSON美化',
-          href: '/formatter/json'
+          name: "JSON美化",
+          href: "/formatter/json"
         }
       ],
       textToolList: [
@@ -142,15 +152,16 @@ export default {
       imageToolList: [
         {
           name: "在线水印制作",
-          href: "https:/www.ishuiyin.net"
+          href: "https:/www.ishuiyin.net",
+          isLink: true
         },
         {
           name: "在线查看图片EXIF信息",
           href: "/image/exif-viewer"
         },
         {
-          name: '图片转base64',
-          href: '/image/image2base64'
+          name: "图片转base64",
+          href: "/image/image2base64"
         }
       ],
       convertToolList: [
@@ -175,20 +186,20 @@ export default {
           icon: ""
         },
         {
-          name: '功率单位转换',
-          href: '/converter/power-converter'
+          name: "功率单位转换",
+          href: "/converter/power-converter"
         },
         {
           name: "压力单位转换",
-          href: '/converter/pressure-converter'
+          href: "/converter/pressure-converter"
         },
         {
-          name: '温度单位转换',
-          href: '/converter/temprature-converter'
+          name: "温度单位转换",
+          href: "/converter/temprature-converter"
         },
         {
           name: "面积单位转换",
-          href: '/converter/square-converter'
+          href: "/converter/square-converter"
         },
         {
           name: "体积单位转换",
@@ -196,15 +207,15 @@ export default {
         },
         {
           name: "速度单位转换",
-          href: '/converter/speed-converter'
+          href: "/converter/speed-converter"
         },
         {
           name: "长度单位转换",
-          href: '/converter/length-converter'
+          href: "/converter/length-converter"
         },
         {
           name: "重量单位转换",
-          href: '/converter/quality-converter'
+          href: "/converter/quality-converter"
         }
       ],
       hashToolList: [
