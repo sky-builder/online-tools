@@ -174,6 +174,10 @@ export default {
         {
           name: 'gif制作',
           href: '/image/gif-maker'
+        },
+        {
+          name: 'png转jpg',
+          href: '/image/png2jpg'
         }
       ],
       convertToolList: [
