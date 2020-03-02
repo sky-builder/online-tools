@@ -170,6 +170,10 @@ export default {
         {
           name: "ig图片下载",
           href: '/image/instagram-image-downloader'
+        },
+        {
+          name: 'gif制作',
+          href: '/image/gif-maker'
         }
       ],
       convertToolList: [
