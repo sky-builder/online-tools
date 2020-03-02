@@ -12,6 +12,7 @@
 export default {
   head() {
     return {
+      // https://github.com/yahoo/gifshot#quick-start
       script: [{ src: "/gifshot.min.js" }]
     };
   },
