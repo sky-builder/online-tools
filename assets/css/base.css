@@ -10,22 +10,35 @@ h3 {
 body {
   @apply text-yellow-500;
 }
-textarea, input {
+textarea,
+input {
   background-color: #333;
   outline: none;
   @apply border border-yellow-500;
 }
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   @apply border-yellow-700;
 }
 button {
+  border-radius: 0.25rem;
+  background-color: #ecc94b;
+  background-image: linear-gradient(-180deg, #ecc94b, #d69e2e 90%);
   @apply bg-yellow-500;
   @apply text-black;
   @apply px-2 py-1;
 }
 button:hover {
+  background-color: #e7c755;
+  background-image: linear-gradient(-180deg, #e7c755, #bd8514 90%);
   @apply bg-yellow-400;
 }
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2em #d69e2e78;
+}
 button:active {
-  @apply bg-yellow-600;
+  outline: none;
+  background-image: none;
+  background-color: #bd8514;
 }

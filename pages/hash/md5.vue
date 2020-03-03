@@ -5,20 +5,18 @@
     <textarea
       id="js-input"
       v-model="input"
-      class="border border-gray-300 w-full"
+      class="w-full"
       name
       cols="30"
       rows="10"
     ></textarea>
     <button
-      class="bg-blue-500 hover:bg-blue-700 w-32 text-white font-bold py-2 px-4 rounded self-center flex-none"
       @click="handleClick"
     >加密</button>
     <div v-if="isResultVisible">
       <span>加密结果：</span>
       <span>{{ output }}</span>
       <button
-        class="bg-gray-300 hover:bg-gray-500 text-sm text-gray-700 py-1 px-2 rounded self-center flex-none ml-2"
         @click="handleCopy"
       >复制</button>
       <span
