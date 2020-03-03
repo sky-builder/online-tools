@@ -11,7 +11,7 @@
       id="js-output"
       cols="30"
       rows="10"
-      class="border-gray w-full"
+      class="w-full"
       v-model="output"
     ></textarea>
     <h2 class="text-4xl my-4">Base64 解释</h2>

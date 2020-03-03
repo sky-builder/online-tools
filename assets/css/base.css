@@ -1,0 +1,31 @@
+h1 {
+  @apply text-4xl my-2;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-lg;
+}
+body {
+  @apply text-yellow-500;
+}
+textarea, input {
+  background-color: #333;
+  outline: none;
+  @apply border border-yellow-500;
+}
+textarea:focus, input:focus {
+  @apply border-yellow-700;
+}
+button {
+  @apply bg-yellow-500;
+  @apply text-black;
+  @apply px-2 py-1;
+}
+button:hover {
+  @apply bg-yellow-400;
+}
+button:active {
+  @apply bg-yellow-600;
+}
