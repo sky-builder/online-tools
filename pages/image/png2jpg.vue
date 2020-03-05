@@ -1,7 +1,7 @@
 <template>
   <div class="png2jpg relative">
     <h1>在线png转jpg</h1>
-    <label for="js-input" class="button" :disabled="loading">
+    <label for="js-input" class="button" :disabled="loading" v-loading="loading">
       <span>点击上传png图片</span>
       <input type="file" id="js-input" class="hidden" @input="handleInput" />
     </label>
@@ -25,7 +25,7 @@ export default {
       isPngLoaded: false,
       isJpgLoaded: false,
       q: 100,
-      loading: true
+      loading: false
     };
   },
   methods: {

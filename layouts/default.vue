@@ -11,7 +11,64 @@
     </div>
   </div>
 </template>
-
+<script>
+import vue from "vue";
+const loadingDirective = {
+  inserted: (el, binding) => {
+    let isLoading = binding.value;
+    if (isLoading) {
+      let div = document.createElement("div");
+      div.setAttribute('v-loading', true);
+      div.style.position = "absolute";
+      div.style.top = "0";
+      div.style.left = "0";
+      div.style.width = "100%";
+      div.style.height = "100%";
+      div.style.display = "flex";
+      div.style.alignItems = "center";
+      div.style.justifyContent = "center";
+      div.style.background = '#333';
+      let span = document.createElement("span");
+      span.innerHTML = "处理中，请稍等...";
+      span.style.color = '#ecc94b';
+      div.appendChild(span);
+      el.appendChild(div);
+    }
+  },
+  update: (el, binding) => {
+    let isLoading = binding.value;
+    let loadingEl = el.querySelector('[v-loading]')
+    if (isLoading) {
+      if (loadingEl) {
+        loadingEl.style.display = 'flex';
+      } else {
+        let div = document.createElement("div");
+        div.setAttribute('v-loading', true);
+        div.style.position = "absolute";
+        div.style.top = "0";
+        div.style.left = "0";
+        div.style.width = "100%";
+        div.style.height = "100%";
+        div.style.display = "flex";
+        div.style.alignItems = "center";
+        div.style.justifyContent = "center";
+        let span = document.createElement("span");
+        div.style.background = '#333';
+        span.innerHTML = "处理中，请稍等...";
+        span.style.color = '#ecc94b';
+        div.appendChild(span);
+        el.appendChild(div);
+      }
+    } else {
+      if (loadingEl) {
+        loadingEl.style.display = 'none';
+      }
+    }
+  }
+};
+vue.directive("loading", loadingDirective);
+export default {};
+</script>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
