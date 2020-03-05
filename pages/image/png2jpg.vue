@@ -1,14 +1,18 @@
 <template>
-  <div>
-    <input type="file" @input="handleInput" />
-    <img ref="png" src class="hidden" />
-    <button @click="doConvert">convert</button>
-    <div v-if="isPngLoaded">
-      <label for="js-input"></label>
+  <div class="png2jpg">
+    <h1>在线png转jpg</h1>
+    <label for="js-input">点击上传png图片</label>
+    <br />
+    <input type="file" id="js-input" @input="handleInput" />
+    <img ref="png" src class="hidden block png" />
+    <button class="mt-2" v-if="isPngLoaded" @click="doConvert">转换</button>
+    <div v-if="isPngLoaded" class="mt-2">
+      <label for="js-input">jpg质量(quality)</label>
+      <br />
       <input id="js-input" type="number" min="0" max="100" step="1" v-model="q" />
     </div>
-    <img ref="jpg" src alt class="hidden" />
-    <button v-if="isJpgLoaded" @click="doDownload">download</button>
+    <img ref="jpg" src alt class="hidden jpg mt-2" />
+    <button class="mt-2" v-if="isJpgLoaded" @click="doDownload">下载</button>
   </div>
 </template>
 
@@ -64,4 +68,10 @@ export default {
 </script>
 
 <style>
+.png2jpg .png,
+.png2jpg .jpg {
+  height: 500px;
+  width: auto;
+  display: block;
+}
 </style>

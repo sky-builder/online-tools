@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <input type="file" multiple class @input="handleUpload" />
-    <div ref="img-container"></div>
-    <button @click="doConvert">make gif</button>
-    <img ref="gif" class="hidden" />
-    <button @click="doDownload">download gif</button>
+  <div class="gif-maker">
+    <h1>在线gif制作</h1>
+    <label for="js-input">点击上传多张用于制作gif的图片</label>
+    <br />
+    <input type="file" id="js-input" multiple class @input="handleUpload" />
+    <div ref="img-container" class="img-container flex flex-row flex-wrap"></div>
+    <button v-if="hasImg" class="mt-2" @click="doConvert">制作gif</button>
+    <img ref="gif" class="hidden mt-2" />
+    <button v-if="hasResult" class="mt-2" @click="doDownload">下载gif</button>
   </div>
 </template>
 
@@ -18,7 +21,9 @@ export default {
   },
   data() {
     return {
-      imgList: []
+      imgList: [],
+      hasResult: false,
+      hasImg: false
     };
   },
   methods: {
@@ -39,6 +44,7 @@ export default {
             let gif = this.$refs["gif"];
             gif.src = src;
             gif.classList.remove("hidden");
+            this.hasResult = true;
           }
         }
       );
@@ -69,6 +75,7 @@ export default {
           c.appendChild(img);
           this.imgList.push(img);
         });
+        this.hasImg = true;
       });
     }
   }
@@ -76,4 +83,11 @@ export default {
 </script>
 
 <style>
+.gif-maker .img-container img {
+  width: 150px;
+  height: auto;
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 </style>
