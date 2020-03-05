@@ -7,7 +7,7 @@
       v-model="link"
       placeholder="请输入instagram的图片地址，例子：https://www.instagram.com/p/B6LSmz7p1fP/"
     />
-    <button class="mt-2 relative" @click="doDownload" :disabled="loading"></button>
+    <button class="mt-2 relative" @click="doDownload" :disabled="loading">下载</button>
   </div>
 </template>
 
