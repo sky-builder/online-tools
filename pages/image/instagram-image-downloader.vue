@@ -1,7 +1,13 @@
 <template>
   <div>
-    <input class="w-full" type="text" v-model="link" />
-    <button @click="doDownload">download</button>
+    <h1>在线下载instagram图片</h1>
+    <input
+      class="w-full"
+      type="text"
+      v-model="link"
+      placeholder="请输入instagram的图片地址，例子：https://www.instagram.com/p/B6LSmz7p1fP/"
+    />
+    <button class="mt-2 relative" @click="doDownload" :disabled="loading"></button>
   </div>
 </template>
 
@@ -11,11 +17,13 @@ import imageType from "image-type";
 export default {
   data() {
     return {
-      link: ""
+      link: "",
+      loading: true
     };
   },
   methods: {
     doDownload() {
+      this.loading = true;
       axios
         .get("http://api.magisk.tech/download-ig-image?url=" + this.link, {
           responseType: "arraybuffer"
@@ -36,6 +44,10 @@ export default {
             a.download = new Date().getTime() + "." + type.ext;
             a.click();
           };
+          this.loading = false;
+        })
+        .catch(() => {
+          this.loading = false;
         });
     }
   }
