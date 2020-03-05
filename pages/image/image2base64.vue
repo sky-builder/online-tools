@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线图片转base64</h1>
-    <input type="file" name="image" id="js-input" @input="handleInput" class="border-gray" />
+    <h1>在线图片转base64</h1>
+    <input type="file" name="image" id="js-input" @input="handleInput" class />
     <br />
     <img :style="imgStyle" alt="user upload image" ref="img" />
     <br />
@@ -14,7 +14,7 @@
       class="w-full"
       v-model="output"
     ></textarea>
-    <h2 class="text-4xl my-4">Base64 解释</h2>
+    <h2 class="my-4">Base64 解释</h2>
     <p>
       Base64是一种基于64个可打印字符来表示二进制数据的表示方法。
       <br />Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括MIME的电子邮件及XML的一些复杂数据。

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线查看图片Exif信息</h1>
+    <h1>在线查看图片Exif信息</h1>
     <input type="file" @input="handleInput" />
     <img id="js-img" :style="imgStyle" src alt="user upload image" />
     <table>
@@ -11,7 +11,7 @@
         </tr>
       </tbody>
     </table>
-    <h2 class="text-4xl my-4">Exif 解释</h2>
+    <h2 class="my-4">Exif 解释</h2>
     <p>
       可交换图像文件格式（英语：Exchangeable image file format，官方简称Exif），是专门为数码相机的照片设定的文件格式，可以记录数码照片的属性信息和拍摄数据。
       <br />Exif最初由日本电子工业发展协会在1996年制定，版本为1.0。1998年，升级到2.1版，增加了对音频文件的支持。2002年3月，发表了2.2版。

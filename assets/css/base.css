@@ -11,13 +11,15 @@ body {
   @apply text-yellow-500;
 }
 textarea,
-input {
+input,
+select {
   background-color: #333;
   outline: none;
   @apply border border-yellow-500;
 }
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   @apply border-yellow-700;
 }
 button {

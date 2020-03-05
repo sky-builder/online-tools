@@ -8,7 +8,7 @@
           </td>
           <td>
             <input
-              class="border-gray w-64"
+              class="w-64"
               type="text"
               name
               :id="'js-' + item.key"
@@ -16,7 +16,7 @@
             />
           </td>
           <td>
-            <button class="btn-blue" @click="handleInput(item)">转换</button>
+            <button @click="handleInput(item)">转换</button>
           </td>
         </tr>
       </tbody>

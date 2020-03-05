@@ -1,41 +1,27 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线AES加密/解密</h1>
+    <h1>在线AES加密/解密</h1>
     <label for="js-key">密匙</label>
     <br />
-    <input type="text" name="key" id="js-key" v-model="key" class="border-gray" />
+    <input type="text" name="key" id="js-key" v-model="key" />
     <br />
     <label for="js-input">输入</label>
     <br />
-    <textarea
-      name="input"
-      id="js-input"
-      cols="30"
-      rows="10"
-      v-model="input"
-      class="border-gray w-full"
-    ></textarea>
+    <textarea name="input" id="js-input" cols="30" rows="10" v-model="input" class="w-full"></textarea>
     <div>
-      <button class="btn-blue" @click="doEncrypt">加密</button>
-      <button class="btn-blue" @click="doDecrypt">解密</button>
+      <button @click="doEncrypt">加密</button>
+      <button @click="doDecrypt">解密</button>
     </div>
     <label for="js-output">输出</label>
     <br />
-    <textarea
-      name="output"
-      id="js-output"
-      cols="30"
-      rows="10"
-      v-model="output"
-      class="border-gray w-full"
-    ></textarea>
-    <h2 class="text-4xl my-4">FAQ</h2>
-    <h3 class="text-2xl my-2">什么是AES加密？</h3>
+    <textarea name="output" id="js-output" cols="30" rows="10" v-model="output" class="w-full"></textarea>
+    <h2 class="my-4">FAQ</h2>
+    <h3 class="my-2">什么是AES加密？</h3>
     <p>
       高级加密标准（英语：Advanced Encryption Standard，缩写：AES），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院（NIST）于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。
       <br />该算法为比利时密码学家Joan Daemen和Vincent Rijmen所设计，结合两位作者的名字，以Rijndael为名投稿高级加密标准的甄选流程。（Rijndael的发音近于"Rhine doll"）
     </p>
-    <h3 class="text-2xl my-2">AES加密的安全性如何？</h3>
+    <h3 class="my-2">AES加密的安全性如何？</h3>
     <p>
       截至2006年，针对AES唯一的成功攻击是旁道攻击或社会工程学攻击。美国国家安全局审核了所有的参与竞选AES的最终入围者（包括Rijndael），认为他们均能够满足美国政府传递非机密文件的安全需要。2003年6月，美国政府宣布AES可以用于加密机密文件：
       <br />

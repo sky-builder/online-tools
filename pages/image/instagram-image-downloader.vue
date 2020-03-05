@@ -1,18 +1,18 @@
 <template>
   <div>
-    <input class="border-gray w-full" type="text" v-model="link" />
+    <input class="w-full" type="text" v-model="link" />
     <button @click="doDownload">download</button>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import imageType from 'image-type';
+import axios from "axios";
+import imageType from "image-type";
 export default {
   data() {
     return {
-      link: '',
-    }
+      link: ""
+    };
   },
   methods: {
     doDownload() {

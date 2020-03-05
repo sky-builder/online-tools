@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-6xl">unsplash 每日图片</h1>
+    <h1>unsplash 每日图片</h1>
     <img src="https://source.unsplash.com/daily" alt ref="img" />
   </div>
 </template>

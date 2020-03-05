@@ -1,28 +1,28 @@
 <template>
   <div>
-    <h1 class="text-6xl">历史上的今天 - {{today}}</h1>
-    <h2 class="text-4xl">大事件</h2>
+    <h1>历史上的今天 - {{today}}</h1>
+    <h2 class>大事件</h2>
     <ul>
       <li
         v-for="item in historyToday.eventList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
-    <h2 class="text-4xl">出生</h2>
+    <h2 class>出生</h2>
     <ul>
       <li
         v-for="item in historyToday.birthList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
-    <h2 class="text-4xl">逝世</h2>
+    <h2 class>逝世</h2>
     <ul>
       <li
         v-for="item in historyToday.deathList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
-    <h2 class="text-4xl">节日和假期</h2>
+    <h2 class>节日和假期</h2>
     <ul>
       <li v-for="item in historyToday.holidayList" :key="item">{{ item }}</li>
     </ul>

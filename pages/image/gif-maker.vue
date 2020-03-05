@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="file" multiple class="border-gray" @input="handleUpload" />
+    <input type="file" multiple class @input="handleUpload" />
     <div ref="img-container"></div>
     <button @click="doConvert">make gif</button>
     <img ref="gif" class="hidden" />
@@ -23,22 +23,22 @@ export default {
   },
   methods: {
     doDownload() {
-      let a = document.createElement('a');
-      a.setAttribute('download', new Date().toLocaleString() + ".gif");
-      a.href = this.$refs['gif'].src;
+      let a = document.createElement("a");
+      a.setAttribute("download", new Date().toLocaleString() + ".gif");
+      a.href = this.$refs["gif"].src;
       a.click();
     },
     doConvert(e) {
       gifshot.createGIF(
         {
-          images: this.imgList,
+          images: this.imgList
         },
-        (obj) => {
+        obj => {
           if (!obj.error) {
             let src = obj.image;
-            let gif = this.$refs['gif'];
+            let gif = this.$refs["gif"];
             gif.src = src;
-            gif.classList.remove('hidden');
+            gif.classList.remove("hidden");
           }
         }
       );
