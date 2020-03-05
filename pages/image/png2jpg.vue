@@ -1,9 +1,11 @@
 <template>
-  <div class="png2jpg">
+  <div class="png2jpg relative">
     <h1>在线png转jpg</h1>
-    <label for="js-input">点击上传png图片</label>
+    <label for="js-input" class="button" :disabled="loading">
+      <span>点击上传png图片</span>
+      <input type="file" id="js-input" class="hidden" @input="handleInput" />
+    </label>
     <br />
-    <input type="file" id="js-input" @input="handleInput" />
     <img ref="png" src class="hidden block png" />
     <button class="mt-2" v-if="isPngLoaded" @click="doConvert">转换</button>
     <div v-if="isPngLoaded" class="mt-2">
@@ -22,12 +24,14 @@ export default {
     return {
       isPngLoaded: false,
       isJpgLoaded: false,
-      q: 100
+      q: 100,
+      loading: true
     };
   },
   methods: {
     handleInput(e) {
       if (!e.target.files) return;
+      this.loading = true;
       let file = e.target.files[0];
       let fr = new FileReader();
       fr.onload = () => {
@@ -35,6 +39,7 @@ export default {
         img.onload = () => {
           img.classList.remove("hidden");
           this.isPngLoaded = true;
+          this.loading = false;
         };
         img.src = fr.result;
       };
