@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       link: "",
-      loading: true
+      loading: false
     };
   },
   methods: {
