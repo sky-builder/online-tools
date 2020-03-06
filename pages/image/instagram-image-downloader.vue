@@ -7,7 +7,7 @@
       v-model="link"
       placeholder="请输入instagram的图片地址，例子：https://www.instagram.com/p/B6LSmz7p1fP/"
     />
-    <button class="mt-2 relative" @click="doDownload" :disabled="loading">下载</button>
+    <button class="mt-2 relative" @click="doDownload" :disabled="loading" v-spin="loading">下载</button>
   </div>
 </template>
 
@@ -30,7 +30,6 @@ export default {
         })
         .then(res => {
           let type = imageType(new Uint8Array(res.data));
-          console.log(res);
           let blob = new Blob([res.data], {
             type: "image/jpeg"
           });
@@ -38,7 +37,6 @@ export default {
           reader.readAsDataURL(blob);
           reader.onloadend = function() {
             var base64data = reader.result;
-            console.log(base64data);
             let a = document.createElement("a");
             a.href = base64data;
             a.download = new Date().getTime() + "." + type.ext;
