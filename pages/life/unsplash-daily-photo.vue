@@ -16,7 +16,7 @@
 export default {
   computed: {
     imgStyle() {
-      if (this.isFullScreen) return;
+      if (!this.isFullScreen) return;
       return {
         position: "fixed",
         left: "50%",
