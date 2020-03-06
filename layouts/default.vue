@@ -189,7 +189,7 @@ html {
   }
   .app__header-inner,
   .app__footer-inner {
-    line-height: 48px;
+    line-height: 47px;
     width: 1200px;
     margin: 0 auto;
     display: flex;
