@@ -7,7 +7,10 @@
     </div>
     <nuxt class="app__body" />
     <div class="app__footer">
-      <div class="app__footer-inner">©小蜜蜂工具网 2020</div>
+      <div class="app__footer-inner">
+        <span>©小蜜蜂工具网 2020</span>
+        <nuxt-link to="/contact" class="ml-2 hover:underline">留言</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
