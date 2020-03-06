@@ -16,7 +16,7 @@ export default {
         src: "/ace-min/ace.js"
       },
       {
-        src: "/css.js"
+        src: '/ace-min/theme-monokai.js'
       }
     ],
     link: [
