@@ -1,8 +1,6 @@
 :root {
   --bgColor: #fff;
-  --primary: #333;
-  --danger: #f00;
-  --success: #0f0;
+  --textColor: #333;
 }
 h1 {
   @apply text-4xl my-4;
@@ -14,7 +12,7 @@ h3 {
   @apply text-lg my-1;
 }
 body {
-  color: var(--primary);
+  color: var(--textColor);
   background-color: var(--bgColor);
 }
 button {
