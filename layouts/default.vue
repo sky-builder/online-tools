@@ -2,7 +2,7 @@
   <div class="app">
     <div class="app__header shadow shadow-yellow-500">
       <div class="app__header-inner">
-        <a class="hover:text-yellow-400" href="/">小蜜蜂工具网</a>
+        <a href="/">🐝小蜜蜂工具网</a>
       </div>
     </div>
     <nuxt class="app__body" />
@@ -150,7 +150,6 @@ html {
     Roboto, "Helvetica Neue", "Microsoft Yahei", Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  background-color: #333;
 }
 
 *,
@@ -180,12 +179,6 @@ html {
     height: 48px;
     flex-shrink: 0;
     flex-grow: 0;
-  }
-  .app__header {
-    border-bottom: 1px solid rgba(236, 201, 75, 0.25);
-  }
-  .app__footer {
-    border-top: 1px solid rgba(236, 201, 75, 0.25);
   }
   .app__header-inner,
   .app__footer-inner {

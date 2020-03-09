@@ -1,57 +1,45 @@
+:root {
+  --bgColor: #fff;
+  --primary: #333;
+  --danger: #f00;
+  --success: #0f0;
+}
 h1 {
-  @apply text-4xl my-2;
+  @apply text-4xl my-4;
 }
 h2 {
-  @apply text-2xl;
+  @apply text-2xl my-2;
 }
 h3 {
-  @apply text-lg;
+  @apply text-lg my-1;
 }
 body {
-  @apply text-yellow-500;
-}
-textarea,
-input,
-select {
-  background-color: #333;
-  outline: none;
-  @apply border border-yellow-500;
-}
-textarea:focus,
-input:focus,
-select:focus {
-  @apply border-yellow-700;
+  color: var(--primary);
+  background-color: var(--bgColor);
 }
 button {
-  border-radius: 0.25rem;
-  background-color: #ecc94b;
-  background-image: linear-gradient(-180deg, #ecc94b, #d69e2e 90%);
-  @apply bg-yellow-500;
-  @apply text-black;
-  @apply px-2 py-1;
+  @apply rounded bg-yellow-500 px-4 py-2;
 }
 button:hover {
-  background-color: #e7c755;
-  background-image: linear-gradient(-180deg, #e7c755, #bd8514 90%);
-  @apply bg-yellow-400;
+  @apply bg-yellow-400
 }
 button:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.2em #d69e2e78;
+  @apply outline-none shadow-outline;
 }
 button:active {
-  outline: none;
-  background-image: none;
-  background-color: #bd8514;
+  @apply bg-yellow-600 outline-none;
+}
+textarea,
+input {
+  @apply border border-gray-300 rounded px-4 py-2;
+}
+select {
+  @apply border border-gray-300 rounded px-2 py-1;
 }
 label.button {
-  display: inline-block;
-  cursor: pointer;
-  @apply px-4 py-2;
-  @apply border border-yellow-500;
-  position: relative;
+  @apply relative border border-gray-300 px-4 py-2 cursor-pointer inline-block;
 }
 label.button:hover {
   @apply bg-yellow-500;
-  @apply text-black;
 }
+
