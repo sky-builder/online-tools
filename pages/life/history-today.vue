@@ -4,27 +4,27 @@
     <h2 class>大事件</h2>
     <ul>
       <li
-        v-for="item in historyToday.eventList"
+        v-for="item in eventList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
     <h2 class>出生</h2>
     <ul>
       <li
-        v-for="item in historyToday.birthList"
+        v-for="item in birthList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
     <h2 class>逝世</h2>
     <ul>
       <li
-        v-for="item in historyToday.deathList"
+        v-for="item in deathList"
         :key="item.titleList.join(',')"
       >{{ item.year }}：{{ item.titleList.join('\n')}}</li>
     </ul>
     <h2 class>节日和假期</h2>
     <ul>
-      <li v-for="item in historyToday.holidayList" :key="item">{{ item }}</li>
+      <li v-for="item in holidayList" :key="item">{{ item }}</li>
     </ul>
     <!-- <div class="flex flex-row justify-center" v-for="(row,i) in calender" :key="i">
       <table v-for="m in row" :key="m">
@@ -46,34 +46,26 @@
 </template>
 
 <script>
-let day = new Date().getDate();
-let month = new Date().getMonth() + 1;
-let today = `${month}月${day}日`;
+import axios from 'axios';
+import cryptoJs from "crypto-js";
 export default {
+  head() {
+    return {
+      title: '历史上的今天 - ' + this.today,
+    }
+  },
+  async asyncData ({ params }) {
+    let day = new Date().getDate();
+    let month = new Date().getMonth() + 1;
+    let today = `${month}月${day}日`
+    const { data } = await axios.get(`http://api.magisk.tech/history-today/${month}/${day}`)
+    let output = cryptoJs.AES.decrypt(data, 'ilovelucy');
+    output = cryptoJs.enc.Utf8.stringify(output);
+    output = JSON.parse(output);
+    return { ...output, today: today }
+  },
   data() {
     return {
-      historyToday: require(`@/assets/history-today/${today}.json`),
-      today: today,
-      monthDayMap: {
-        1: 31,
-        2: 29,
-        3: 31,
-        4: 30,
-        5: 31,
-        6: 30,
-        7: 31,
-        8: 31,
-        9: 30,
-        10: 31,
-        11: 30,
-        12: 31
-      },
-      calender: [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [10, 11, 12]
-      ]
     };
   }
 };
