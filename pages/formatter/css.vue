@@ -1,6 +1,6 @@
 <template>
   <div class="app__body flex flex-col">
-    <h1 class="text-5xl">CSS格式化工具</h1>
+    <h1 class="text-5xl">CSS美化工具</h1>
     <label for="js-css-input">输入</label>
     <div class="w-full relative editor-wrapper">
       <div id="js-css-input"></div>
@@ -25,6 +25,11 @@
 <script>
 import { css as cssBeautify } from "js-beautify";
 export default {
+  head() {
+    return {
+      title: 'CSS美化',
+    }
+  },
   data() {
     return {
       editor1: null,

@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'JSON美化',
+    }
+  },
   data() {
     return {
       editor1: null,

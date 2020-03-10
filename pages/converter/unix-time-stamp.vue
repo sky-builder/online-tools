@@ -60,6 +60,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'unix时间戳转换',
+    }
+  },
   data() {
     return {
       currentTime: "",

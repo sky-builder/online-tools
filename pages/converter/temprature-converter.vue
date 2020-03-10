@@ -30,6 +30,11 @@
 import tempratureConverterMixin from "@/assets/js/temprature-converter/index";
 
 export default {
+  head() {
+    return {
+      title: '温度单位转换',
+    }
+  },
   mixins: [tempratureConverterMixin],
   data() {
     return {};

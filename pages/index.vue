@@ -31,6 +31,11 @@
 <script>
 import toolList from "@/assets/js/tool-list";
 export default {
+  head() {
+    return {
+      title: '小蜜蜂工具网',
+    }
+  },
   data() {
     return {
       toolList: toolList

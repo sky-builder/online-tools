@@ -54,6 +54,11 @@ import copyToClipboard from "@/assets/js/copy-to-clipboard";
 import cryptoJs from "crypto-js";
 
 export default {
+  head() {
+    return {
+      title: '在线HMAC-MD5加密',
+    }
+  },
   data() {
     return {
       isResultVisible: false,

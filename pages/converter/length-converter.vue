@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>长度单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -27,6 +28,11 @@
 <script>
 import lengthConverterMixin from "@/assets/js/length-converter/index";
 export default {
+  head() {
+    return {
+      title: '长度单位转换',
+    }
+  },
   mixins: [lengthConverterMixin],
   data() {
     return {};

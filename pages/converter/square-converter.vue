@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>面积单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -33,6 +34,11 @@
 <script>
 import squareConverterMixin from "@/assets/js/square-converter/index";
 export default {
+  head() {
+    return {
+      title: '面积单位转换',
+    }
+  },
   mixins: [squareConverterMixin],
   data() {
     return {};

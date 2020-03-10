@@ -20,6 +20,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '在线png转jpg',
+    }
+  },
   data() {
     return {
       isPngLoaded: false,

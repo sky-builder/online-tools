@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>质量单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -27,6 +28,11 @@
 <script>
 import qualityConverterMixin from "@/assets/js/quality-converter/index";
 export default {
+  head() {
+    return {
+      title: '质量单位转换',
+    }
+  },
   mixins: [qualityConverterMixin],
   data() {
     return {};

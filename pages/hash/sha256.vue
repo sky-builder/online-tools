@@ -46,6 +46,11 @@ import copyToClipboard from "@/assets/js/copy-to-clipboard";
 import cryptojs from "crypto-js";
 
 export default {
+  head() {
+    return {
+      title: '在线SHA-256加密',
+    }
+  },
   data() {
     return {
       isResultVisible: false,

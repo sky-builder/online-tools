@@ -17,6 +17,11 @@
 export default {
   head() {
     return {
+      title: '在线gif制作',
+    }
+  },
+  head() {
+    return {
       // https://github.com/yahoo/gifshot#quick-start
       script: [{ src: "/gifshot.min.js" }]
     };

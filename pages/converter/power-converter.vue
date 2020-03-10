@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>功率单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -49,6 +50,11 @@
 <script>
 import powerConverterMixin from "@/assets/js/power-converter/index";
 export default {
+  head() {
+    return {
+      title: '功率单位转换',
+    }
+  },
   mixins: [powerConverterMixin],
   data() {
     return {};

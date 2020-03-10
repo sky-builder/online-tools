@@ -28,6 +28,11 @@
 import exifJs from "exif-js";
 
 export default {
+  head() {
+    return {
+      title: '图片Exif信息查看',
+    }
+  },
   data() {
     return {
       metaDataList: [],

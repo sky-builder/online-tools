@@ -45,6 +45,11 @@ import copyToClipboard from "@/assets/js/copy-to-clipboard";
 import cryptojs from "crypto-js";
 
 export default {
+  head() {
+    return {
+      title: '在线HMAC-SHA1加密',
+    }
+  },
   data() {
     return {
       isResultVisible: false,

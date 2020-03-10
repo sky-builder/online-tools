@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>压力单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -33,6 +34,11 @@
 <script>
 import pressureConverterMixin from "@/assets/js/pressure-converter/index";
 export default {
+  head() {
+    return {
+      title: '压力单位转换',
+    }
+  },
   mixins: [pressureConverterMixin],
   data() {
     return {};

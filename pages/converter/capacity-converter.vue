@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>体积单位转换</h1>
     <table>
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
@@ -27,6 +28,11 @@
 <script>
 import capacityConverterMixin from "@/assets/js/capacity-converter/index";
 export default {
+  head() {
+    return {
+      title: '体积单位转换',
+    }
+  },
   mixins: [capacityConverterMixin],
   data() {
     return {};

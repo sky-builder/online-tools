@@ -34,6 +34,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '在线图片转base64',
+    }
+  },
   data() {
     return {
       output: "",

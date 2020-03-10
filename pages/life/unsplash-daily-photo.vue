@@ -14,6 +14,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Unsplash每日图片',
+    }
+  },
   computed: {
     imgStyle() {
       if (!this.isFullScreen) return;

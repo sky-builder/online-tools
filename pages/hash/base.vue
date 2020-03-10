@@ -39,6 +39,11 @@
 import cryptojs from "crypto-js";
 
 export default {
+  head() {
+    return {
+      title: '在线进制转换',
+    }
+  },
   data() {
     return {
       inputBase: 10,

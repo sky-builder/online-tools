@@ -25,6 +25,11 @@
 <script>
 import { html as htmlBeautify } from "js-beautify";
 export default {
+  head() {
+    return {
+      title: 'HTML美化',
+    }
+  },
   data() {
     return {
       editor1: null,

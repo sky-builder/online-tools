@@ -29,6 +29,11 @@
 <script>
 import cryptoJs from "crypto-js";
 export default {
+  head() {
+    return {
+      title: '在线RC4加密解密',
+    }
+  },
   data() {
     return {
       input: "",

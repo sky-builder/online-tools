@@ -15,6 +15,11 @@
 import axios from "axios";
 import imageType from "image-type";
 export default {
+  head() {
+    return {
+      title: '在线下载Instagram图片',
+    }
+  },
   data() {
     return {
       link: "",

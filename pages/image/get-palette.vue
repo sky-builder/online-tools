@@ -17,6 +17,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '传图识色',
+    }
+  },
   name: "getImagePalette",
   head() {
     return {

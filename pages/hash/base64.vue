@@ -33,6 +33,11 @@
 import cryptojs from "crypto-js";
 
 export default {
+  head() {
+    return {
+      title: '在线base64编码',
+    }
+  },
   data() {
     return {
       encoded: "",

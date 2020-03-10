@@ -15,6 +15,11 @@
 <script>
 import axios from "axios";
 export default {
+  head() {
+    return {
+      title: 'Bing每日图片',
+    }
+  },
   data() {
     return {
       isFullScreen: false

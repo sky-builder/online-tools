@@ -26,6 +26,11 @@
 export default {
   head() {
     return {
+      title: 'JavaScript丑化',
+    }
+  },
+  head() {
+    return {
       script: [{ src: "/uglifyjs.js" }]
     };
   },

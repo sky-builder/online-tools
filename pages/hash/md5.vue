@@ -46,6 +46,11 @@ import copyToClipboard from "@/assets/js/copy-to-clipboard";
 export default {
   head() {
     return {
+      title: '在线MD5加密',
+    }
+  },
+  head() {
+    return {
       script: [{ src: "/md5.min.js" }]
     };
   },
