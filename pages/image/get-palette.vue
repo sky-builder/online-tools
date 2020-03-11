@@ -5,13 +5,13 @@
       点击上传图片
       <input type="file" id="js-input" class="hidden" @input="handleInput" />
     </label>
-    <img src alt ref="img" class="hidden h-64" />
-    <div
-      class="inline-block px-2 py-2"
-      v-for="c in colorList"
-      :key="c"
-      :style="{'background-color': c}"
-    >{{ c }}</div>
+    <div class="text-center">
+      <img src alt ref="img" class="hidden mx-auto my-2" style="height: 500px" />
+      <div class="inline-block mr-2 flex-col " v-for="c in colorList" :key="c">
+        <div :style="{'background-color': c}" class="w-full h-12 rounded"></div>
+        <div class="font-mono">{{ c }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,8 +19,8 @@
 export default {
   head() {
     return {
-      title: '传图识色',
-    }
+      title: "传图识色"
+    };
   },
   name: "getImagePalette",
   head() {

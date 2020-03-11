@@ -1,22 +1,22 @@
 <template>
   <div>
     <h1>速度单位转换</h1>
-    <table>
+    <table class="w-1/2">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
-          <td>
+          <td class="py-2 px-4 border border-gray-300">
             <label :for="'js-' + item.key">{{ item.name }}({{item.unit}})</label>
           </td>
-          <td>
+          <td class="py-2 px-4 border border-gray-300">
             <input
-              class="w-64"
+              class="w-full"
               type="text"
               name
               :id="'js-' + item.key"
               v-model="keyValueMap[item.key]"
             />
           </td>
-          <td>
+          <td class="py-2 px-4 border border-gray-300 text-center">
             <button @click="handleInput(item)">转换</button>
           </td>
         </tr>

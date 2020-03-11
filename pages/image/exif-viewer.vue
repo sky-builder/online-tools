@@ -1,13 +1,16 @@
 <template>
   <div>
     <h1>在线查看图片Exif信息</h1>
-    <input type="file" @input="handleInput" />
-    <img id="js-img" :style="imgStyle" src alt="user upload image" />
+    <label for="js-input" class="button">
+      <span>上传图片</span>
+      <input type="file" id="js-input" class="hidden" @input="handleInput" />
+    </label>
+    <img id="js-img" :style="imgStyle" class="my-2" src alt="user upload image" />
     <table>
       <tbody>
         <tr v-for="item in metaDataList" :key="item[0]">
-          <td>{{ item[0] }}</td>
-          <td>{{ item[1] }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item[0] }}</td>
+          <td class="px-4 py-2 border border-gray-300">{{ item[1] }}</td>
         </tr>
       </tbody>
     </table>
@@ -43,7 +46,7 @@ export default {
     imgStyle() {
       return {
         width: "auto",
-        height: "300px",
+        height: "350px",
         display: this.isImageLoaded ? "block" : "none"
       };
     }

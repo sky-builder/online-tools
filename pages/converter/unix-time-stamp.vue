@@ -12,36 +12,36 @@
     <table class="mt-2">
       <tbody>
         <tr>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <label for="js-input-unix">unix时间戳(ms)</label>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <input type="tet" v-model="unixInput" class="border" />
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <button @click="unix2time">转换</button>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <span>时间</span>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <span>{{ unixOutput }}</span>
           </td>
         </tr>
         <tr>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <label for="js-time-input">时间(例如: 2020-01-01 12:00:00)</label>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <input type="text" v-model="timeInput" class="border" />
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <button @click="time2unix">转换</button>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <span>unix时间戳(ms)</span>
           </td>
-          <td class="p-2">
+          <td class="p-2 border border-gray-300">
             <span>{{ timeOutput }}</span>
           </td>
         </tr>
