@@ -1,14 +1,16 @@
 <template>
   <div class="my-2 mx-2">
+    <h1>Bing每日图片</h1>
+    <p>{{ copyright }}</p>
     <img
       ref="img"
       src
-      style="hidden"
-      class="mx-auto img-border"
-      alt
-      :style="imgStyle"
+      class="mx-auto img-border cursor-pointer hidden"
+      alt="bing daily photo"
       @click="toggleFullScreen"
     />
+    <div v-show="isFullScreen" @click="toggleFullScreen" :style="imgContainerStyle" class="fixed bg-cover left-0 top-0 bg-no-repeat w-full h-full">
+    </div>
   </div>
 </template>
 
@@ -22,24 +24,19 @@ export default {
   },
   data() {
     return {
-      isFullScreen: false
+      isFullScreen: false,
+      copyright: '加载中，请稍等',
+      imgLink: '',
     };
   },
   computed: {
-    imgStyle() {
-      if (!this.isFullScreen) return;
+    imgContainerStyle() {
       return {
-        position: "fixed",
-        left: "50%",
-        top: 0,
-        border: "none",
-        padding: "none",
-        height: "100%",
-        transform: "translateX(-50%)"
-      };
-    }
+        backgroundImage: `url(${this.imgLink})`,
+      }
+    },
   },
-  created() {
+  mounted() {
     let that = this;
     async function fetchPhoto() {
       // For local dev
@@ -48,8 +45,14 @@ export default {
       const result = await axios.get("http://api.magisk.tech/bing-daily-photo");
       const data = result.data;
       const imageUrl = baseUrl + data.images[0].url;
-      that.$refs["img"].src = imageUrl;
-      that.$refs["img"].style.display = "block";
+      let img = new Image();
+      img.onload = () => {
+        that.copyright = data.images[0].copyright;
+        that.$refs["img"].src = imageUrl;
+        that.imgLink = imageUrl;
+        that.$refs["img"].style.display = "block";
+      }
+      img.src = imageUrl;
     }
     fetchPhoto();
   },
