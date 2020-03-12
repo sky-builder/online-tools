@@ -3,8 +3,8 @@
     <h1>Bing每日图片</h1>
     <img
       ref="img"
-      src
-      class="mx-auto img-border cursor-pointer hidden shadow-lg"
+      :src="placeholderSrc(1920, 1080)"
+      class="mx-auto img-border cursor-pointer shadow-lg bing-daily-photo"
       alt="bing daily photo"
       @click="toggleFullScreen"
     />
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       isFullScreen: false,
-      copyright: '加载中，请稍等',
+      copyright: '',
       imgLink: '',
     };
   },
@@ -33,6 +33,7 @@ export default {
     imgContainerStyle() {
       return {
         backgroundImage: `url(${this.imgLink})`,
+        cursor: 'zoom-out'
       }
     },
   },
@@ -57,6 +58,9 @@ export default {
     fetchPhoto();
   },
   methods: {
+    placeholderSrc(width, height) {
+      return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"%3E%3C/svg%3E`
+    },
     toggleFullScreen() {
       this.isFullScreen = !this.isFullScreen;
     }
@@ -65,7 +69,7 @@ export default {
 </script>
 
 <style>
-.unsplash-img {
-  height: 600px;
+.bing-daily-photo {
+  cursor: zoom-in;
 }
 </style>
