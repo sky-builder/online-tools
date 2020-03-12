@@ -41,3 +41,6 @@ label.button:hover {
   @apply bg-yellow-500;
 }
 
+table td {
+  @apply border border-gray-300 px-4 py-2;
+}

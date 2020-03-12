@@ -5,7 +5,10 @@
         <a href="/">🐝小蜜蜂工具网</a>
       </div>
     </div>
-    <nuxt class="app__body" />
+    <div class="app__body">
+      <nuxt />
+      <tool-description :name="toolName" />
+    </div>
     <div class="app__footer">
       <div class="app__footer-inner">
         <span>©小蜜蜂工具网 2020</span>
@@ -16,6 +19,8 @@
 </template>
 <script>
 import vue from "vue";
+import ToolDescription from '@/components/ToolDescription';
+vue.component('tool-description', ToolDescription)
 const loadingDirective = {
   inserted: (el, binding) => {
     let isLoading = binding.value;
@@ -142,12 +147,19 @@ const spinDirective = {
 }
 vue.directive("loading", loadingDirective);
 vue.directive("spin", spinDirective);
-export default {};
+export default {
+  computed: {
+    toolName() {
+      let route = this.$route;
+      return route.fullPath.split('/').pop();
+    }
+  }
+};
 </script>
 <style>
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", "Microsoft Yahei", Arial, sans-serif;
+  /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", "Microsoft Yahei", Arial, sans-serif; */
   font-size: 100%;
   line-height: 1.5;
 }

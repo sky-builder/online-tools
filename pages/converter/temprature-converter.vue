@@ -22,7 +22,6 @@
         </tr>
       </tbody>
     </table>
-    <h2 class="my-4">工具说明</h2>
   </div>
 </template>
 

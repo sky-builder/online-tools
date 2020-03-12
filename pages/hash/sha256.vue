@@ -17,19 +17,15 @@
       <span>加密文本：</span>
       <span>{{ input2 }}</span>
     </div>
-    <tool-description name="sha-256" />
+    
   </div>
 </template>
 
 <script>
 import copyToClipboard from "@/assets/js/copy-to-clipboard";
-import ToolDescription from '@/components/ToolDescription'
 import cryptojs from "crypto-js";
 
 export default {
-  components: {
-    ToolDescription
-  },
   head() {
     return {
       title: '在线SHA-256加密',

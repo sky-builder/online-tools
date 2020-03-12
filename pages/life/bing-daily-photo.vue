@@ -1,14 +1,14 @@
 <template>
   <div class="my-2 mx-2">
     <h1>Bing每日图片</h1>
-    <p>{{ copyright }}</p>
     <img
       ref="img"
       src
-      class="mx-auto img-border cursor-pointer hidden"
+      class="mx-auto img-border cursor-pointer hidden shadow-lg"
       alt="bing daily photo"
       @click="toggleFullScreen"
     />
+    <p class="text-center">{{ copyright }}</p>
     <div v-show="isFullScreen" @click="toggleFullScreen" :style="imgContainerStyle" class="fixed bg-cover left-0 top-0 bg-no-repeat w-full h-full">
     </div>
   </div>
