@@ -5,16 +5,27 @@
       <span>点击上传png图片</span>
       <input type="file" id="js-input" class="hidden" @input="handleInput" />
     </label>
-    <br />
-    <img ref="png" src class="hidden block png" />
-    <button class="mt-2" v-if="isPngLoaded" @click="doConvert">转换</button>
-    <div v-if="isPngLoaded" class="mt-2">
-      <label for="js-input">jpg质量(quality)</label>
-      <br />
-      <input id="js-input" type="number" min="0" max="100" step="1" v-model="q" />
+    <div class="flex flex-row mt-2">
+      <div class="flex-1 flex flex-col invisible" ref="png">
+        <img src class=" block img-border png w-full" />
+        <p class="text-center italic">{{ pngFilename }}</p>
+      </div>
+      <div v-if="isPngLoaded" class="flex flex-col p-2 w-48">
+        <div>
+          <label for="js-input">jpg质量(quality)</label>
+          <br />
+          <input id="js-input" type="number" class="w-full" min="0" max="100" step="1" v-model="q" />
+        </div>
+        <button @click="doConvert" class="mt-2">转换</button>
+      </div>
+      <div class="flex-1 invisible" ref="jpg">
+        <p>{{ jpgFilename }}</p>
+        <img src alt class="img-border jpg w-full" />
+      </div>
     </div>
-    <img ref="jpg" src alt class="hidden jpg mt-2" />
-    <button class="mt-2" v-if="isJpgLoaded" @click="doDownload">下载</button>
+    <div class="flex flex-row mt-2 ">
+      <button class="ml-auto" v-if="isJpgLoaded" @click="doDownload">下载</button>
+    </div>
   </div>
 </template>
 
@@ -30,7 +41,9 @@ export default {
       isPngLoaded: false,
       isJpgLoaded: false,
       q: 100,
-      loading: false
+      loading: false,
+      jpgFilename: '',
+      pngFilename: '',
     };
   },
   methods: {
@@ -40,9 +53,11 @@ export default {
       let file = e.target.files[0];
       let fr = new FileReader();
       fr.onload = () => {
-        let img = this.$refs["png"];
+        let div = this.$refs["png"];
+        let img = div.querySelector('img')
         img.onload = () => {
-          img.classList.remove("hidden");
+          div.classList.remove("invisible");
+          this.pngFilename = file.name;
           this.isPngLoaded = true;
           this.loading = false;
         };
@@ -53,22 +68,23 @@ export default {
     doConvert() {
       let cv = document.createElement("canvas");
       let ct = cv.getContext("2d");
-      let png = this.$refs["png"];
+      let png = this.$refs["png"].querySelector('img')
       cv.width = png.naturalWidth;
       cv.height = png.naturalHeight;
       ct.drawImage(png, 0, 0);
       let src = cv.toDataURL("image/jpeg", this.q / 100);
       let jpg = this.$refs["jpg"];
-      jpg.onload = () => {
-        jpg.classList.remove("hidden");
+      let img = jpg.querySelector('img')
+      img.onload = () => {
+        jpg.classList.remove("invisible");
         this.isJpgLoaded = true;
       };
-      jpg.src = src;
+      img.src = src;
     },
     doDownload() {
       let a = document.createElement("a");
       let name = new Date().toLocaleString() + ".jpg";
-      let jpg = this.$refs["jpg"];
+      let jpg = this.$refs["jpg"].querySelector('img');
       a.setAttribute("download", name);
       a.href = jpg.src;
       a.click();
@@ -78,10 +94,4 @@ export default {
 </script>
 
 <style>
-.png2jpg .png,
-.png2jpg .jpg {
-  height: 500px;
-  width: auto;
-  display: block;
-}
 </style>
