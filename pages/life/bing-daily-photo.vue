@@ -65,4 +65,7 @@ export default {
 </script>
 
 <style>
+.unsplash-img {
+  height: 600px;
+}
 </style>
