@@ -17,35 +17,19 @@
       <span>加密文本：</span>
       <span>{{ input2 }}</span>
     </div>
-    <h2 class="my-4">FAQ</h2>
-    <h3 class="my-2">什么是 SHA-256 加密？</h3>
-    <p>
-      SHA-256是SHA-2加密哈希函数的成员。
-      <br />SHA-2，名称来自于安全散列算法2（英语：Secure Hash Algorithm 2）的缩写，一种密码散列函数算法标准，由美国国家安全局研发，由美国国家标准与技术研究院（NIST）在2001年发布。属于SHA算法之一，是SHA-1的后继者。其下又可再分为六个不同的算法标准，包括了：SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224、SHA-512/256。
-    </p>
-    <h3 class="my-2">SHA-256 加密安全吗？</h3>
-    <p>这些新的散列函数并没有接受像SHA-1一样的公众密码社群做详细的检验，所以它们的密码安全性还不被大家广泛的信任。Gilbert和Handschuh在2003年曾对这些新变种作过一些研究，声称他们没有找到弱点。</p>
-    <h3 class="my-2">SHA-256 和 SHA-512 有什么区别？</h3>
-    <p>
-      SHA-256和SHA-512是很新的散列函数，前者以定义一个word为32位，后者则定义一个word为64位。它们分别使用了不同的偏移量，或用不同的常量，然而，实际上二者结构是相同的，只在循环运行的次数上有所差异。
-      <br />SHA-512所有的数字都是64位，
-      <br />SHA-512运行80次加密循环而非64次，
-      <br />SHA-512初始值和常量拉长成64位，以及
-      <br />二者比特的偏移量和循环位移量不同。
-    </p>
-    <a
-      class="text-blue-500 mt-2 inline-block hover:text-blue-700"
-      href="https://zh.wikipedia.org/wiki/SHA-2"
-      target="_blank"
-    >SHA-2 中文维基百科</a>
+    <tool-description name="sha-256" />
   </div>
 </template>
 
 <script>
 import copyToClipboard from "@/assets/js/copy-to-clipboard";
+import ToolDescription from '@/components/ToolDescription'
 import cryptojs from "crypto-js";
 
 export default {
+  components: {
+    ToolDescription
+  },
   head() {
     return {
       title: '在线SHA-256加密',
