@@ -1,5 +1,5 @@
 <template>
-  <div class="png2jpg relative">
+  <div class="png2jpg">
     <h1>在线png转jpg</h1>
     <label for="js-input" class="button" :disabled="loading" v-loading="loading">
       <span>点击上传png图片</span>
@@ -7,7 +7,7 @@
     </label>
     <div class="flex flex-row mt-2">
       <div class="flex-1 flex flex-col invisible" ref="png">
-        <img src class=" block img-border png w-full" />
+        <full-screen-image :src="pngSrc" />
         <p class="text-center italic">{{ pngFilename }}</p>
       </div>
       <div v-if="isPngLoaded" class="flex flex-col p-2 w-48">
@@ -19,8 +19,7 @@
         <button @click="doConvert" class="mt-2">转换</button>
       </div>
       <div class="flex-1 invisible" ref="jpg">
-        <p>{{ jpgFilename }}</p>
-        <img src alt class="img-border jpg w-full" />
+        <full-screen-image :src="jpgSrc" />
       </div>
     </div>
     <div class="flex flex-row mt-2 ">
@@ -44,6 +43,8 @@ export default {
       loading: false,
       jpgFilename: '',
       pngFilename: '',
+      pngSrc: '',
+      jprSrc: ''
     };
   },
   methods: {
@@ -54,14 +55,11 @@ export default {
       let fr = new FileReader();
       fr.onload = () => {
         let div = this.$refs["png"];
-        let img = div.querySelector('img')
-        img.onload = () => {
-          div.classList.remove("invisible");
-          this.pngFilename = file.name;
-          this.isPngLoaded = true;
-          this.loading = false;
-        };
-        img.src = fr.result;
+        this.pngSrc = fr.result;
+        div.classList.remove("invisible");
+        this.pngFilename = file.name;
+        this.isPngLoaded = true;
+        this.loading = false;
       };
       fr.readAsDataURL(file);
     },
@@ -74,12 +72,9 @@ export default {
       ct.drawImage(png, 0, 0);
       let src = cv.toDataURL("image/jpeg", this.q / 100);
       let jpg = this.$refs["jpg"];
-      let img = jpg.querySelector('img')
-      img.onload = () => {
-        jpg.classList.remove("invisible");
-        this.isJpgLoaded = true;
-      };
-      img.src = src;
+      this.jpgSrc = src;
+      jpg.classList.remove("invisible");
+      this.isJpgLoaded = true;
     },
     doDownload() {
       let a = document.createElement("a");

@@ -20,7 +20,11 @@
 <script>
 import vue from "vue";
 import ToolDescription from '@/components/ToolDescription';
+import LazyImage from '@/components/LazyImage';
+import FullScreenImage from '@/components/FullScreenImage';
 vue.component('tool-description', ToolDescription)
+vue.component('lazy-image', LazyImage)
+vue.component('full-screen-image', FullScreenImage)
 const loadingDirective = {
   inserted: (el, binding) => {
     let isLoading = binding.value;
