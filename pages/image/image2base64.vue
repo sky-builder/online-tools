@@ -1,17 +1,7 @@
 <template>
   <div>
     <h1>在线图片转base64</h1>
-    <label for="js-input" class="button" v-loading="loading">
-      <span>选择图片</span>
-      <input
-        type="file"
-        name="image"
-        class="hidden"
-        id="js-input"
-        :disabled="loading"
-        @input="handleInput"
-      />
-    </label>
+    <drag-and-drop-uploader @files="handleInput" :loading="loading" />
     <br />
     <img :style="imgStyle" alt="user upload image" ref="img" />
     <br />
@@ -50,8 +40,7 @@ export default {
     }
   },
   methods: {
-    handleInput(e) {
-      let files = e.target.files;
+    handleInput(files) {
       if (!files || !files[0]) return;
       let file = files[0];
       let fileReader = new FileReader();
@@ -69,4 +58,5 @@ export default {
 </script>
 
 <style>
+
 </style>

@@ -22,9 +22,11 @@ import vue from "vue";
 import ToolDescription from '@/components/ToolDescription';
 import LazyImage from '@/components/LazyImage';
 import FullScreenImage from '@/components/FullScreenImage';
+import DragAndDropUploader from '@/components/DragAndDropUploader';
 vue.component('tool-description', ToolDescription)
 vue.component('lazy-image', LazyImage)
 vue.component('full-screen-image', FullScreenImage)
+vue.component('drag-and-drop-uploader', DragAndDropUploader)
 const loadingDirective = {
   inserted: (el, binding) => {
     let isLoading = binding.value;
@@ -38,9 +40,9 @@ const loadingDirective = {
     div.style.display = "none";
     div.style.alignItems = "center";
     div.style.justifyContent = "center";
-    div.style.background = '#333';
+    div.style.background = '#fff';
     let span = document.createElement("span");
-    span.innerHTML = "处理中，请稍等...";
+    span.innerHTML = "loading...";
     span.style.color = '#ecc94b';
     div.appendChild(span);
     el.appendChild(div);
