@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="app__header shadow shadow-yellow-500">
-      <div class="app__header-inner">
+      <div class="app__header-inner text-center lg:text-left">
         <a href="/">🐝小蜜蜂工具网</a>
       </div>
     </div>
@@ -10,7 +10,7 @@
       <tool-description :name="toolName" />
     </div>
     <div class="app__footer">
-      <div class="app__footer-inner">
+      <div class="app__footer-inner text-center">
         <span>©小蜜蜂工具网 2020</span>
         <nuxt-link to="/contact" class="ml-2 hover:underline">留言</nuxt-link>
       </div>

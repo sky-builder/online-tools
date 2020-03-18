@@ -4,10 +4,10 @@
       v-for="(tool, i) in toolList"
       :key="tool.title"
       class="py-2"
-      :class="{'my-4': i > 0}"
+      :class="{'my-1 sm:my-2 lg:my-4': i > 0}"
     >
-      <h1 class="opacity-75 border-l-8 border-yellow-500">&nbsp;&nbsp;{{tool.title}}</h1>
-      <div class="grid grid-cols-5 gap-2">
+      <h1 class="opacity-75 bg-yellow-500 lg:bg-white lg:border-yellow-500 lg:border-l-8">&nbsp;&nbsp;{{tool.title}}</h1>
+      <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 px-2">
         <template v-for="item in tool.list">
           <a
             class="hover:underline"
