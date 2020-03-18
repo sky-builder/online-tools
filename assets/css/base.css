@@ -2,6 +2,15 @@
   --bgColor: #fff;
   --textColor: #333;
 }
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-lg;
+}
+h3 {
+  @apply text-base;
+}
 @media (min-width: 640px) {
   h1 {
     @apply text-4xl my-4;
