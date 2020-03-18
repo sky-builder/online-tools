@@ -3,10 +3,10 @@
     <h1>🔒在线MD5加密</h1>
     <label for="js-input">请输入需要加密的字符串：</label>
     <textarea id="js-input" v-model="input" class="w-full block" name cols="30" rows="10"></textarea>
-    <button @click="handleClick" class="mt-2">加密</button>
-    <div v-if="isResultVisible">
+    <button @click="handleClick" class="mt-2 w-full md:w-auto">加密</button>
+    <div v-if="isResultVisible" class="mt-2">
       <span>加密结果：</span>
-      <span>{{ output }}</span>
+      <span class="break-words">{{ output }}</span>
       <button @click="handleCopy">复制</button>
       <span
         id="js-copy-msg"
@@ -15,7 +15,7 @@
     </div>
     <div v-if="isResultVisible">
       <span>加密文本：</span>
-      <span>{{ input2 }}</span>
+      <span class="break-words">{{ input2 }}</span>
     </div>
   </div>
 </template>

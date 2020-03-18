@@ -2,14 +2,16 @@
   --bgColor: #fff;
   --textColor: #333;
 }
-h1 {
-  @apply text-4xl my-4;
-}
-h2 {
-  @apply text-2xl my-3;
-}
-h3 {
-  @apply text-lg my-2;
+@media (min-width: 640px) {
+  h1 {
+    @apply text-4xl my-4;
+  }
+  h2 {
+    @apply text-2xl my-3;
+  }
+  h3 {
+    @apply text-lg my-2;
+  }
 }
 body {
   color: var(--textColor);

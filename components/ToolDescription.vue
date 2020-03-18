@@ -12,7 +12,7 @@ export default {
       })
       let h1 = h('h1', null, '📝工具说明')
       return h('div', {
-        class: ['w-3/4 mt-12 pl-8 border-l-8']
+        class: ['w-full md:w-3/4 mt-8 pl-2 border-l-4 lg:pl-8 border-l-8']
       }, [h1].concat(descList));
     } catch (err) {
       return;
