@@ -1,12 +1,9 @@
 <template>
   <div>
-    <h1>在线查看图片Exif信息</h1>
-    <label for="js-input" class="button">
-      <span>上传图片</span>
-      <input type="file" id="js-input" class="hidden" @input="handleInput" />
-    </label>
+    <h1>📸在线查看图片Exif信息</h1>
+    <drag-and-drop-uploader @files="handleInput" />
     <img id="js-img" :style="imgStyle" class="my-2" src alt="user upload image" />
-    <table>
+    <table class="w-full">
       <tbody>
         <tr v-for="item in metaDataList" :key="item[0]">
           <td class="px-4 py-2 border border-gray-300">{{ item[0] }}</td>
@@ -42,9 +39,9 @@ export default {
     }
   },
   methods: {
-    handleInput(e) {
-      if (!e.target.files || !e.target.files[0]) return;
-      let file = e.target.files[0];
+    handleInput(files) {
+      if (!files || !files[0]) return;
+      let file = files[0];
       let that = this;
       let fileReader = new FileReader();
       fileReader.onload = e => {

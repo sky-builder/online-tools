@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>速度单位转换</h1>
-    <table class="w-1/2">
+    <h1>🔁速度单位转换</h1>
+    <table class="w-full mt-4 sm:w-1/2">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
-          <td class="py-2 px-4 border border-gray-300">
+          <td>
             <label :for="'js-' + item.key">{{ item.name }}({{item.unit}})</label>
           </td>
-          <td class="py-2 px-4 border border-gray-300">
+          <td>
             <input
               class="w-full"
               type="text"
@@ -16,7 +16,7 @@
               v-model="keyValueMap[item.key]"
             />
           </td>
-          <td class="py-2 px-4 border border-gray-300 text-center">
+          <td class="text-center">
             <button @click="handleInput(item)">转换</button>
           </td>
         </tr>

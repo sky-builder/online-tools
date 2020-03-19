@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>面积单位转换</h1>
-    <table>
+    <h1>🔁面积单位转换</h1>
+    <table class="w-full mt-4 sm:w-1/2">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
           <td>

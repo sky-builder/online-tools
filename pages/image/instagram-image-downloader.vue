@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>在线下载instagram图片</h1>
+    <h1>🖼在线下载instagram图片</h1>
     <input
-      class="w-full"
+      class="w-full mt-4"
       type="text"
       v-model="link"
-      placeholder="请输入instagram的图片地址，例子：https://www.instagram.com/p/B6LSmz7p1fP/"
+      placeholder="https://www.instagram.com/p/B6LSmz7p1fP/"
     />
-    <button class="mt-2 relative" @click="doDownload" :disabled="loading" v-spin="loading">下载</button>
+    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading" v-spin="loading">下载</button>
   </div>
 </template>
 

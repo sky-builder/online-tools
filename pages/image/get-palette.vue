@@ -1,12 +1,9 @@
 <template>
   <div>
-    <h1>在线传图识色</h1>
-    <label for="js-input" class="button" v-loading="loading" :disabled="loading">
-      点击上传图片
-      <input type="file" id="js-input" class="hidden" @input="handleInput" />
-    </label>
+    <h1>🌈在线传图识色</h1>
+    <drag-and-drop-uploader class="mt-4" @files="handleInput" />
     <div class="text-center">
-      <img src alt ref="img" class="hidden mx-auto my-2" style="height: 500px" />
+      <img src alt ref="img" class="hidden mx-auto my-2 img-border sm:h-64" />
       <div class="inline-block mr-2 flex-col " v-for="c in colorList" :key="c">
         <div :style="{'background-color': c}" class="w-full h-12 rounded"></div>
         <div class="font-mono">{{ c }}</div>
@@ -36,10 +33,10 @@ export default {
   },
   mounted() {},
   methods: {
-    handleInput(e) {
-      if (!e.target.files[0]) return;
+    handleInput(files) {
+      if (!files || !files[0]) return;
       this.loading = true;
-      let file = e.target.files[0];
+      let file = files[0];
       let fr = new FileReader();
       fr.onload = () => {
         let src = fr.result;

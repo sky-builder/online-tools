@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>压力单位转换</h1>
-    <table>
+    <h1>🔁压力单位转换</h1>
+    <table class="mt-4">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
           <td>
@@ -9,7 +9,6 @@
           </td>
           <td>
             <input
-              class="w-64"
               type="text"
               name
               :id="'js-' + item.key"

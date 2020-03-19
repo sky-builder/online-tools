@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>在线温度单位转换</h1>
-    <table>
+    <h1>🔁在线温度单位转换</h1>
+    <table class="mt-4 w-full table-auto sm:w-1/2">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
           <td>
@@ -9,8 +9,8 @@
           </td>
           <td>
             <input
-              class="w-64"
               type="text"
+              class="w-full"
               name
               :id="'js-' + item.key"
               v-model="keyValueMap[item.key]"

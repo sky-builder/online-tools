@@ -4,11 +4,11 @@
     @dragover="handleDragEnter"
     @dragleave="handleDragLeave"
     @drop="handleDrop"
-    class="drop-area border-gray-300 h-32 border-gray-500 border-dashed border-4 rounded-lg flex flex-col items-center justify-center"
+    class="drop-area border-gray-300 sm:h-32 border-gray-500 border-dashed sm:border-4 rounded-lg flex flex-col items-center justify-center"
   >
-    <span class="text-gray-500">拖放图片</span>
-    <span class="text-sm text-gray-300 text-center">or</span>
-    <label for="js-input" class="button" v-loading="loading">
+    <span class="text-gray-500 hidden sm:inline">拖放图片</span>
+    <span class="text-sm text-gray-300 text-center hidden sm:inline">or</span>
+    <label for="js-input" class="button w-full text-center sm:w-auto" v-loading="loading">
       <span>选择图片</span>
       <input
         type="file"

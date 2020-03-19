@@ -27,6 +27,7 @@ body {
   background-color: var(--bgColor);
 }
 button {
+  word-break: keep-all;
   @apply rounded bg-yellow-500 px-4 py-2;
 }
 button:hover {
