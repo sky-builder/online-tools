@@ -16,7 +16,4 @@ export default {
 </script>
 
 <style>
-.unsplash-daily-photo .lazy-img {
-  height: 600px;
-}
 </style>

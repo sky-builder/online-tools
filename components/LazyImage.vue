@@ -1,6 +1,6 @@
 <template>
   <div class="lazy-img" :class="{'is-full': isFullScreen}">
-    <img ref="img" class="img-border h-full mx-auto" :src="placeholderSrc(width, height)" @click="toggleFullScreen">
+    <img ref="img" class="img-border w-full h-auto sm:w-auto" :src="placeholderSrc(width, height)" @click="toggleFullScreen">
   </div>
 </template>
 
@@ -38,23 +38,27 @@ export default {
 <style>
 .lazy-img img {
   cursor: zoom-in;
+  margin: 0 auto;
+  height: 600px;
 }
 .lazy-img.is-full {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background-color: #333;
   animation: fade 0.25s;
-  width: 100%;
-  height: 100% !important;
-  cursor: zoom-out;
+  margin: 0;
+  padding: 0;
+  /* in case parent elemnet override the height */
+  height: auto !important;
 }
 .lazy-img.is-full img {
   height: 100%;
-  border: none;
   padding: 0;
+  margin: 0 auto;
+  border: none;
   cursor: zoom-out;
 }
 @keyframes fade {
