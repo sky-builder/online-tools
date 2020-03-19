@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>在线字数统计</h1>
-    <label for="js-input">输入</label>
+    <h1>📝在线字数统计</h1>
+    <label class="block mt-4" for="js-input">输入</label>
     <textarea
       name="input"
       id="js-inut"
