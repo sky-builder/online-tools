@@ -1,18 +1,16 @@
 <template>
   <div>
-    <h1>在线 URI 编码/解码</h1>
-    <div class="flex flex-row">
+    <h1>🔁在线 URI 编码/解码</h1>
+    <div class="flex flex-col">
       <div class="flex-1">
         <label for="js-decoded">编码前</label>
         <textarea id="js-decoded" v-model="decoded" class="w-full" name cols="30" rows="10"></textarea>
       </div>
-      <div class="flex-none flex flex-col mx-2 self-center">
-        <button class="flex flex-row" @click="handleEncode">
-          <img class="w-4 self-center" src="~/assets/icons/arrow-right.svg" />
+      <div class="flex-none flex flex-row self-start">
+        <button  @click="handleEncode">
           <span class="flex-1">编码</span>
         </button>
-        <button class="flex flex-row mt-2" @click="handleDecode">
-          <img class="w-4 self-center" src="~/assets/icons/arrow-left.svg" />
+        <button class="ml-2"  @click="handleDecode">
           <span class="flex-1">解码</span>
         </button>
       </div>
