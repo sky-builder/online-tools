@@ -7,7 +7,8 @@
       v-model="link"
       placeholder="https://www.instagram.com/p/B6LSmz7p1fP/"
     />
-    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading" v-spin="loading">下载</button>
+    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading">下载</button>
+    <full-screen-image class="mt-2" :class="{'hidden': !src}" :src="src" />
   </div>
 </template>
 
@@ -23,7 +24,8 @@ export default {
   data() {
     return {
       link: "",
-      loading: false
+      loading: false,
+      src: ''
     };
   },
   methods: {
@@ -34,6 +36,7 @@ export default {
           responseType: "arraybuffer"
         })
         .then(res => {
+          let that = this;
           let type = imageType(new Uint8Array(res.data));
           let blob = new Blob([res.data], {
             type: "image/jpeg"
@@ -42,6 +45,7 @@ export default {
           reader.readAsDataURL(blob);
           reader.onloadend = function() {
             var base64data = reader.result;
+            that.src = base64data;
             let a = document.createElement("a");
             a.href = base64data;
             a.download = new Date().getTime() + "." + type.ext;

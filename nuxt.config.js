@@ -36,6 +36,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '~/plugins/loading-directive/index.js', mode: 'client'
+    }
   ],
   /*
   ** Nuxt.js dev-modules

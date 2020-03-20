@@ -39,10 +39,12 @@ export default {
         let img = this.$refs["img"];
         let nw = img.naturalWidth;
         let nh = img.naturalHeight;
-        let s1 = nw / bodyWidth;
-        let s2 = nh / bodyHeight;
+        let s1, s2;
+        s1 = nw / bodyWidth;
+        s2 = nh / bodyHeight;
         let fsImg;
-        if (s1 > s2) {
+        let isFitWidth = ((s1 > 1 || s2 > 1) && s1 > s2) || (s1 <= 1 && s2 <= 1 && s1 > s2);
+        if (isFitWidth) {
           fsImg = this.$refs["fit-width-img"];
         } else {
           fsImg = this.$refs["fit-height-img"];
@@ -76,7 +78,7 @@ export default {
   cursor: zoom-out;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 .full-screen-image.is-full .fit-width-img,
