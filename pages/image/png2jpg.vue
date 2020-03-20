@@ -1,16 +1,13 @@
 <template>
   <div class="png2jpg">
-    <h1>在线png转jpg</h1>
-    <label for="js-input" class="button" :disabled="loading" v-loading="loading">
-      <span>点击上传png图片</span>
-      <input type="file" id="js-input" class="hidden" @input="handleInput" />
-    </label>
-    <div class="flex flex-row mt-2">
+    <h1>🎭在线png转jpg</h1>
+    <drag-and-drop-uploader class="mt-2" @files="handleInput" />
+    <div class="flex flex-col mt-2">
       <div class="flex-1 flex flex-col invisible" ref="png">
         <full-screen-image :src="pngSrc" />
         <p class="text-center italic">{{ pngFilename }}</p>
       </div>
-      <div v-if="isPngLoaded" class="flex flex-col p-2 w-48">
+      <div v-if="isPngLoaded" class="flex flex-col p-2">
         <div>
           <label for="js-input">jpg质量(quality)</label>
           <br />
@@ -23,7 +20,7 @@
       </div>
     </div>
     <div class="flex flex-row mt-2 ">
-      <button class="ml-auto" v-if="isJpgLoaded" @click="doDownload">下载</button>
+      <button class="w-full" v-if="isJpgLoaded" @click="doDownload">下载</button>
     </div>
   </div>
 </template>
@@ -48,10 +45,10 @@ export default {
     };
   },
   methods: {
-    handleInput(e) {
-      if (!e.target.files) return;
+    handleInput(files) {
+      if (!files || !files[0]) return;
       this.loading = true;
-      let file = e.target.files[0];
+      let file = files[0];
       let fr = new FileReader();
       fr.onload = () => {
         let div = this.$refs["png"];
