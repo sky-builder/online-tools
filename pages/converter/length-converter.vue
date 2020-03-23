@@ -5,7 +5,7 @@
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
           <td>
-            <label :for="'js-' + item.key">{{ item.name }}({{item.unit}})</label>
+            <label :for="'js-' + item.key">{{ item.name }}{{item.unit ? `(${item.unit})` : ''}}</label>
           </td>
           <td>
             <input

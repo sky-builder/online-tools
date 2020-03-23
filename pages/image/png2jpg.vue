@@ -77,6 +77,10 @@ export default {
       let a = document.createElement("a");
       let name = new Date().toLocaleString() + ".jpg";
       let jpg = this.$refs["jpg"].querySelector('img');
+      if (this.pngFilename && this.pngFilename.indexOf('.') !== -1) {
+        let nameWithoutSuffix = this.pngFilename.split('.').shift();
+        name = nameWithoutSuffix + '.jpg';
+      }
       a.setAttribute("download", name);
       a.href = jpg.src;
       a.click();
