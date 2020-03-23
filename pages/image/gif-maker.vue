@@ -1,6 +1,7 @@
 <template>
   <div class="gif-maker">
     <h1>在线gif制作</h1>
+    <drag-and-drop-list />
     <drag-and-drop-uploader @files="handleUpload" :multiple="true" />
     <div ref="img-container" class="img-container flex flex-row flex-wrap"></div>
     <div v-if="hasImg">

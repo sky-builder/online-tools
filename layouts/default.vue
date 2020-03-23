@@ -23,10 +23,12 @@ import ToolDescription from "@/components/ToolDescription";
 import LazyImage from "@/components/LazyImage";
 import FullScreenImage from "@/components/FullScreenImage";
 import DragAndDropUploader from "@/components/DragAndDropUploader";
+import DragAndDropList from "@/components/drag-and-drop-list";
 vue.component("tool-description", ToolDescription);
 vue.component("lazy-image", LazyImage);
 vue.component("full-screen-image", FullScreenImage);
 vue.component("drag-and-drop-uploader", DragAndDropUploader);
+vue.component("drag-and-drop-list", DragAndDropList);
 const loadingDirective = {
   inserted: (el, binding) => {
     let isLoading = binding.value;
