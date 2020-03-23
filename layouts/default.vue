@@ -151,7 +151,6 @@ const spinDirective = {
     }
   }
 };
-vue.directive("loading", loadingDirective);
 vue.directive("spin", spinDirective);
 export default {
   computed: {

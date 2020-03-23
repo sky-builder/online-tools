@@ -15,6 +15,7 @@
         name="image"
         class="hidden"
         id="js-input"
+        :multiple="multiple"
         :disabled="loading"
         @input="handleInput"
       />
@@ -25,7 +26,8 @@
 <script>
 export default {
   props: {
-    loading: Boolean
+    loading: Boolean,
+    multiple: Boolean,
   },
   data() {
     return {

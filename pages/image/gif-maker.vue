@@ -1,13 +1,17 @@
 <template>
   <div class="gif-maker">
     <h1>在线gif制作</h1>
-    <label for="js-input" class="button" :disabled="loading" v-loading="loading">
-      <span>点击上传多张用于制作gif的图片</span>
-      <input type="file" id="js-input" class="hidden" multiple @input="handleUpload" />
-    </label>
-    <br />
+    <drag-and-drop-uploader @files="handleUpload" :multiple="true" />
     <div ref="img-container" class="img-container flex flex-row flex-wrap"></div>
-    <button v-if="hasImg" class="mt-2 relative" @click="doConvert">制作gif</button>
+    <div v-if="hasImg">
+      <label for="js-height">高度</label>
+      <input id="js-height" type="number" step="1" min="25" max="1000" v-model="height">
+      <label for="js-width">宽度</label>
+      <input id="js-width" type="number" step="1" min="25" max="1000" v-model="width">
+      <label for="js-frame-duration">时间间隔(秒)</label>
+      <input id="js-frame-duration" type="number" step="0.1" min="0.1" max="50" v-model="frameDuration">
+    </div>
+    <button v-if="hasImg" class="mt-2 relative" @click="doConvert" v-loading="isConverting" :disabled="isConverting">制作gif</button>
     <img ref="gif" class="hidden mt-2" />
     <button v-if="hasResult" class="mt-2" @click="doDownload">下载gif</button>
   </div>
@@ -32,6 +36,10 @@ export default {
       hasResult: false,
       hasImg: false,
       loading: false,
+      isConverting: false,
+      width: 200,
+      height: 200,
+      frameDuration: 0.1
     };
   },
   methods: {
@@ -42,9 +50,13 @@ export default {
       a.click();
     },
     doConvert(e) {
+      this.isConverting = true;
       gifshot.createGIF(
         {
-          images: this.imgList
+          images: this.imgList,
+          gifWidth: this.width,
+          gifHeight: this.height,
+          frameDuration: this.frameDuration * 10
         },
         obj => {
           if (!obj.error) {
@@ -54,14 +66,15 @@ export default {
             gif.classList.remove("hidden");
             this.hasResult = true;
           }
+          this.isConverting = false;
         }
       );
     },
-    handleUpload(e) {
-      if (!e.target.files) return;
+    handleUpload(_files) {
+      if (!_files || !_files[0]) return;
       this.loading = true;
       this.imgList = [];
-      let files = e.target.files;
+      let files = _files;
       files = Array.from(files);
       let pList = [];
       files.forEach(file => {
