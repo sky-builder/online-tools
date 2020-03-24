@@ -1,18 +1,35 @@
 <template>
   <div class="gif-maker">
     <h1>在线gif制作</h1>
-    <drag-and-drop-list />
+
     <drag-and-drop-uploader @files="handleUpload" :multiple="true" />
-    <div ref="img-container" class="img-container flex flex-row flex-wrap"></div>
+    <drag-and-drop-list ref="dnd-list" :list="imgList">
+      <template v-slot:item="{item}">
+        <full-screen-image :draggable="false" :src="item.src" />
+      </template>
+    </drag-and-drop-list>
     <div v-if="hasImg">
       <label for="js-height">高度</label>
-      <input id="js-height" type="number" step="1" min="25" max="1000" v-model="height">
+      <input id="js-height" type="number" step="1" min="25" max="1000" v-model="height" />
       <label for="js-width">宽度</label>
-      <input id="js-width" type="number" step="1" min="25" max="1000" v-model="width">
+      <input id="js-width" type="number" step="1" min="25" max="1000" v-model="width" />
       <label for="js-frame-duration">时间间隔(秒)</label>
-      <input id="js-frame-duration" type="number" step="0.1" min="0.1" max="50" v-model="frameDuration">
+      <input
+        id="js-frame-duration"
+        type="number"
+        step="0.1"
+        min="0.1"
+        max="50"
+        v-model="frameDuration"
+      />
     </div>
-    <button v-if="hasImg" class="mt-2 relative" @click="doConvert" v-loading="isConverting" :disabled="isConverting">制作gif</button>
+    <button
+      v-if="hasImg"
+      class="mt-2 relative"
+      @click="doConvert"
+      v-loading="isConverting"
+      :disabled="isConverting"
+    >制作gif</button>
     <img ref="gif" class="hidden mt-2" />
     <button v-if="hasResult" class="mt-2" @click="doDownload">下载gif</button>
   </div>
@@ -22,8 +39,8 @@
 export default {
   head() {
     return {
-      title: '在线gif制作',
-    }
+      title: "在线gif制作"
+    };
   },
   head() {
     return {
@@ -52,9 +69,10 @@ export default {
     },
     doConvert(e) {
       this.isConverting = true;
+      let imageList = this.$refs["dnd-list"]["_data"]["localList"];
       gifshot.createGIF(
         {
-          images: this.imgList,
+          images: imageList,
           gifWidth: this.width,
           gifHeight: this.height,
           frameDuration: this.frameDuration * 10
@@ -92,20 +110,18 @@ export default {
         });
         pList.push(p);
       });
-      Promise.all(pList).then(resp => {
-        let c = this.$refs["img-container"];
-        c.innerHTML = "";
-        resp.forEach(img => {
-          c.appendChild(img);
-          this.imgList.push(img);
+      Promise.all(pList)
+        .then(resp => {
+          resp.forEach(img => {
+            this.imgList.push(img);
+          });
+          this.hasImg = true;
+          this.loading = false;
+        })
+        .catch(() => {
+          this.hasImg = false;
+          this.loading = false;
         });
-        this.hasImg = true;
-        this.loading = false;
-      })
-      .catch(() => {
-        this.hasImg = false;
-        this.loading = false;
-      })
     }
   }
 };

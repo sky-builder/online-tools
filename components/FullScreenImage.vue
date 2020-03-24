@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img ref="img" :src="src" class="mx-auto img-border" alt @click="toggleFullScreen" />
+    <img ref="img" :draggable="draggable" :src="src" class="mx-auto img-border" alt @click="toggleFullScreen" />
     <div class="full-screen-image" :class="{'is-full': isFullScreen}">
       <img
         ref="fit-width-img"
@@ -23,7 +23,8 @@
 <script>
 export default {
   props: {
-    src: String
+    src: String,
+    draggable: Boolean
   },
   data() {
     return {
@@ -74,12 +75,21 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  animation: fade 0.25s;
+  animation: fade-in 0.25s;
   cursor: zoom-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 999;
+}
+.full-screen-image.is-full .fit-width {
+  width: 100% !important;
+  height: auto !important;
+}
+.full-screen-image.is-full .fit-height {
+  height: 100% !important;
+  width: auto !important;
 }
 .full-screen-image.is-full .fit-width-img,
 .fit-height-img {
@@ -87,7 +97,7 @@ export default {
   border: none;
   cursor: zoom-out;
 }
-@keyframes fade {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
