@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>⚡功率单位转换</h1>
-    <table class="mt-4">
+    <table class="mt-4 w-full">
       <tbody>
         <tr v-for="(item) in unitList" :key="item.key">
           <td>
