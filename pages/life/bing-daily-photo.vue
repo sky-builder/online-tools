@@ -1,7 +1,8 @@
 <template>
   <div class="my-2 mx-2">
     <h1>Bing每日图片</h1>
-    <img
+    <full-screen-image :src="imgLink" />
+    <!-- <img
       ref="img"
       :src="placeholderSrc(1920, 1080)"
       class="mx-auto img-border cursor-pointer shadow-lg bing-daily-photo"
@@ -10,7 +11,7 @@
     />
     <p class="text-center">{{ copyright }}</p>
     <div v-show="isFullScreen" @click="toggleFullScreen" :style="imgContainerStyle" class="fixed bg-cover left-0 top-0 bg-no-repeat w-full h-full">
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -49,9 +50,7 @@ export default {
       let img = new Image();
       img.onload = () => {
         that.copyright = data.images[0].copyright;
-        that.$refs["img"].src = imageUrl;
         that.imgLink = imageUrl;
-        that.$refs["img"].style.display = "block";
       }
       img.src = imageUrl;
     }

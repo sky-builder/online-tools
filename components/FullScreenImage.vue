@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img ref="img" :draggable="draggable" :src="src" class="mx-auto img-border" alt @click="toggleFullScreen" />
+    <img ref="img" :draggable="draggable" :src="imgSrc" class="mx-auto img-border" alt @click="toggleFullScreen" />
     <div class="full-screen-image" :class="{'is-full': isFullScreen}">
       <img
         ref="fit-width-img"
@@ -24,14 +24,42 @@
 export default {
   props: {
     src: String,
-    draggable: Boolean
+    draggable: Boolean,
+    placeHolderWidth: Number,
+    placeHolderHeight: Number
+  },
+  computed: {
+    imgSrc() {
+      return this.loadedSrc ? this.loadedSrc : this.placeholderSrc();
+    }
+  },
+  watch: {
+    src: {
+      handler: function(val) {
+        if (process.server) return;
+        if (/^https?/.test(val)) {
+          let img = new Image();
+          img.onload = () => {
+            this.loadedSrc = val;
+          }
+          img.src = val;
+        } else if (val) {
+          this.loadedSrc = val;
+        }
+      },
+      immediate: true,
+    }
   },
   data() {
     return {
-      isFullScreen: false
+      isFullScreen: false,
+      loadedSrc: ''
     };
   },
   methods: {
+    placeholderSrc() {
+      return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${this.placeHolderWidth || 600} ${this.placeHolderHeight || 200}"%3E%3C/svg%3E`
+    },
     toggleFullScreen() {
       if (!this.isFullScreen) {
         let body = document.body;

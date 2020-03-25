@@ -7,7 +7,7 @@
       v-model="link"
       placeholder="https://www.instagram.com/p/B6LSmz7p1fP/"
     />
-    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading">下载</button>
+    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading" v-loading="loading">下载</button>
     <full-screen-image class="mt-2" :class="{'hidden': !src}" :src="src" />
   </div>
 </template>

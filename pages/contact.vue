@@ -27,6 +27,7 @@ export default {
       axios.post('http://api.magisk.tech/message', data)
       .then(resp => {
         form.reset();
+        window.alert('您的留言已经发送，感谢您的反馈。')
       })
       .catch(e => {
         console.log('err', e);
