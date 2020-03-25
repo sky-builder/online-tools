@@ -1,28 +1,43 @@
 <template>
   <div>
-    <input class="border-gray w-full" type="text" v-model="link" />
-    <button @click="doDownload">download</button>
+    <h1>🖼在线下载instagram图片</h1>
+    <input
+      class="w-full mt-4"
+      type="text"
+      v-model="link"
+      placeholder="https://www.instagram.com/p/B6LSmz7p1fP/"
+    />
+    <button class="mt-2 w-full sm:w-auto" @click="doDownload" :disabled="loading" v-loading="loading">下载</button>
+    <full-screen-image class="mt-2" :class="{'hidden': !src}" :src="src" />
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import imageType from 'image-type';
+import axios from "axios";
+import imageType from "image-type";
 export default {
+  head() {
+    return {
+      title: '在线下载Instagram图片',
+    }
+  },
   data() {
     return {
-      link: '',
-    }
+      link: "",
+      loading: false,
+      src: ''
+    };
   },
   methods: {
     doDownload() {
+      this.loading = true;
       axios
         .get("http://api.magisk.tech/download-ig-image?url=" + this.link, {
           responseType: "arraybuffer"
         })
         .then(res => {
+          let that = this;
           let type = imageType(new Uint8Array(res.data));
-          console.log(res);
           let blob = new Blob([res.data], {
             type: "image/jpeg"
           });
@@ -30,12 +45,16 @@ export default {
           reader.readAsDataURL(blob);
           reader.onloadend = function() {
             var base64data = reader.result;
-            console.log(base64data);
+            that.src = base64data;
             let a = document.createElement("a");
             a.href = base64data;
             a.download = new Date().getTime() + "." + type.ext;
             a.click();
           };
+          this.loading = false;
+        })
+        .catch(() => {
+          this.loading = false;
         });
     }
   }

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1 class="text-6xl">在线字数统计</h1>
-    <label for="js-input">输入</label>
+    <h1>📝在线字数统计</h1>
+    <label class="block mt-4" for="js-input">输入</label>
     <textarea
       name="input"
       id="js-inut"
       cols="30"
       rows="10"
-      class="border border-gray-300 w-full"
+      class="border w-full"
       @input="handleInput"
       v-model="input"
     ></textarea>
@@ -19,12 +19,6 @@
       <span>字符数：</span>
       <span>{{ charCount }}</span>
     </div>
-    <h2 class="text-4xl my-4">在线字数统计工具介绍</h2>
-    <h3 class="text-2xl my-2">字数和字符数有什么区别？</h3>
-    <p>
-      字数包含标点符号、不包含空白字符。
-      <br />字符数包含标点符号、包含空白字符，如空格、换行符、tab等等。
-    </p>
   </div>
 </template>
 

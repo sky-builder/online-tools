@@ -1,15 +1,47 @@
 <template>
-  <div>
-    <input type="file" multiple class="border-gray" @input="handleUpload" />
-    <div ref="img-container"></div>
-    <button @click="doConvert">make gif</button>
-    <img ref="gif" class="hidden" />
-    <button @click="doDownload">download gif</button>
+  <div class="gif-maker">
+    <h1>在线gif制作</h1>
+
+    <drag-and-drop-uploader @files="handleUpload" :multiple="true" />
+    <drag-and-drop-list ref="dnd-list" :list="imgList">
+      <template v-slot:item="{item}">
+        <full-screen-image :draggable="false" :src="item.src" />
+      </template>
+    </drag-and-drop-list>
+    <div v-if="hasImg">
+      <label for="js-height">高度</label>
+      <input id="js-height" type="number" step="1" min="25" max="1000" v-model="height" />
+      <label for="js-width">宽度</label>
+      <input id="js-width" type="number" step="1" min="25" max="1000" v-model="width" />
+      <label for="js-frame-duration">时间间隔(秒)</label>
+      <input
+        id="js-frame-duration"
+        type="number"
+        step="0.1"
+        min="0.1"
+        max="50"
+        v-model="frameDuration"
+      />
+    </div>
+    <button
+      v-if="hasImg"
+      class="mt-2 relative"
+      @click="doConvert"
+      v-loading="isConverting"
+      :disabled="isConverting"
+    >制作gif</button>
+    <img ref="gif" class="hidden mt-2" />
+    <button v-if="hasResult" class="mt-2" @click="doDownload">下载gif</button>
   </div>
 </template>
 
 <script>
 export default {
+  head() {
+    return {
+      title: "在线gif制作"
+    };
+  },
   head() {
     return {
       // https://github.com/yahoo/gifshot#quick-start
@@ -18,35 +50,50 @@ export default {
   },
   data() {
     return {
-      imgList: []
+      imgList: [],
+      hasResult: false,
+      hasImg: false,
+      loading: false,
+      isConverting: false,
+      width: 200,
+      height: 200,
+      frameDuration: 0.1
     };
   },
   methods: {
     doDownload() {
-      let a = document.createElement('a');
-      a.setAttribute('download', new Date().toLocaleString() + ".gif");
-      a.href = this.$refs['gif'].src;
+      let a = document.createElement("a");
+      a.setAttribute("download", new Date().toLocaleString() + ".gif");
+      a.href = this.$refs["gif"].src;
       a.click();
     },
     doConvert(e) {
+      this.isConverting = true;
+      let imageList = this.$refs["dnd-list"]["_data"]["localList"];
       gifshot.createGIF(
         {
-          images: this.imgList,
+          images: imageList,
+          gifWidth: this.width,
+          gifHeight: this.height,
+          frameDuration: this.frameDuration * 10
         },
-        (obj) => {
+        obj => {
           if (!obj.error) {
             let src = obj.image;
-            let gif = this.$refs['gif'];
+            let gif = this.$refs["gif"];
             gif.src = src;
-            gif.classList.remove('hidden');
+            gif.classList.remove("hidden");
+            this.hasResult = true;
           }
+          this.isConverting = false;
         }
       );
     },
-    handleUpload(e) {
-      if (!e.target.files) return;
+    handleUpload(_files) {
+      if (!_files || !_files[0]) return;
+      this.loading = true;
       this.imgList = [];
-      let files = e.target.files;
+      let files = _files;
       files = Array.from(files);
       let pList = [];
       files.forEach(file => {
@@ -63,17 +110,29 @@ export default {
         });
         pList.push(p);
       });
-      Promise.all(pList).then(resp => {
-        let c = this.$refs["img-container"];
-        resp.forEach(img => {
-          c.appendChild(img);
-          this.imgList.push(img);
+      Promise.all(pList)
+        .then(resp => {
+          resp.forEach(img => {
+            this.imgList.push(img);
+          });
+          this.hasImg = true;
+          this.loading = false;
+        })
+        .catch(() => {
+          this.hasImg = false;
+          this.loading = false;
         });
-      });
     }
   }
 };
 </script>
 
 <style>
+.gif-maker .img-container img {
+  width: 150px;
+  height: auto;
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 </style>

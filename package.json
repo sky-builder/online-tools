@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "crypto-js": "^4.0.0",
+    "dayjs": "^1.8.23",
     "exif-js": "^2.3.0",
     "image-type": "^4.1.0",
     "js-beautify": "^1.10.3",

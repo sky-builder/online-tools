@@ -1,0 +1,58 @@
+:root {
+  --bgColor: #fff;
+  --textColor: #333;
+}
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-lg;
+}
+h3 {
+  @apply text-base;
+}
+@media (min-width: 640px) {
+  h1 {
+    @apply text-4xl my-4;
+  }
+  h2 {
+    @apply text-2xl my-3;
+  }
+  h3 {
+    @apply text-lg my-2;
+  }
+}
+body {
+  color: var(--textColor);
+  background-color: var(--bgColor);
+}
+button {
+  word-break: keep-all;
+  @apply rounded bg-yellow-500 px-4 py-2;
+}
+button:hover {
+  @apply bg-yellow-400
+}
+button:focus {
+  @apply outline-none shadow-outline;
+}
+button:active {
+  @apply bg-yellow-600 outline-none;
+}
+textarea,
+input {
+  @apply border border-gray-300 rounded px-4 py-2;
+}
+select {
+  @apply border border-gray-300 rounded px-2 py-1;
+}
+label.button {
+  @apply relative border border-gray-300 px-4 py-2 cursor-pointer inline-block;
+}
+label.button:hover {
+  @apply bg-yellow-500;
+}
+
+table td {
+  @apply border border-gray-300 px-4 py-2;
+}

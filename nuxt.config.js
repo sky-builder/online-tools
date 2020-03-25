@@ -16,12 +16,11 @@ export default {
         src: "/ace-min/ace.js"
       },
       {
-        src: "/css.js"
+        src: '/ace-min/theme-monokai.js'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet',  href: '/codemirror.css' }
     ]
   },
   /*
@@ -37,6 +36,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '~/plugins/loading-directive/index.js', mode: 'client'
+    }
   ],
   /*
   ** Nuxt.js dev-modules

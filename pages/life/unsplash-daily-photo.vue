@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <h1 class="text-6xl">unsplash 每日图片</h1>
-    <img src="https://source.unsplash.com/daily" alt ref="img" />
+  <div class="unsplash-daily-photo">
+    <h1>☀unsplash每日图片</h1>
+    <!-- <lazy-image class="mt-4" src="https://source.unsplash.com/daily" :width="400" :height="600" /> -->
+    <full-screen-image src="https://source.unsplash.com/daily" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  head() {
+    return {
+      title: 'unsplash每日图片',
+    }
+  },
+};
 </script>
 
 <style>

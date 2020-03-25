@@ -7,3 +7,10 @@
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+.img-border {
+  padding: 1px;
+  border: 1px solid #ecc94b;
+}
+.keep-all {
+  word-break: keep-all;
+}

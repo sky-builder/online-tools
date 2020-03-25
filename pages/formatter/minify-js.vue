@@ -5,9 +5,9 @@
     <div class="w-full relative editor-wrapper">
       <div id="js-input"></div>
     </div>
-    <button class="btn-blue self-start my-2" @click="format">格式化</button>
+    <button class="self-start my-2" @click="format">格式化</button>
     <label for="js-indent">缩进</label>
-    <select class="border-gray w-32" name="indent" id="js-indent" v-model="indent">
+    <select class="w-32" name="indent" id="js-indent" v-model="indent">
       <option value="tab">tab</option>
       <option value="1">1spaces</option>
       <option value="2">2spaces</option>
@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'JavaScript丑化',
+    }
+  },
   head() {
     return {
       script: [{ src: "/uglifyjs.js" }]
