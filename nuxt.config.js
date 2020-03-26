@@ -37,6 +37,9 @@ export default {
   */
   plugins: [
     {
+      src: '~/plugins/ga.js', mode: 'client'
+    },
+    {
       src: '~/plugins/loading-directive/index.js', mode: 'client'
     }
   ],
