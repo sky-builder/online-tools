@@ -40,7 +40,7 @@ export default {
     handleInput(item) {
       let { key } = item;
       let value = this.keyValueMap[key];
-      let result = this.doConvert(value, key);
+      let result = this.doConvert(value, key, this.baseTable);
       this.keyValueMap = Object.assign({}, result);
     }
   }

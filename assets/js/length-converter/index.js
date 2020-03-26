@@ -1,4 +1,5 @@
 const baseTable = require("./m-base-table");
+import convert from '../convert';
 
 let unitList = [];
 let keyValueMap = {};
@@ -23,20 +24,6 @@ export default {
     };
   },
   methods: {
-    doConvert(value, unit) {
-      if (!Object.prototype.hasOwnProperty.call(this.baseTable, unit)) {
-        throw new Error(`unit *${unit}* not found.`);
-      }
-      let scale = this.baseTable[unit].scale;
-      let x = scale * value;
-      let keys = Object.keys(this.baseTable);
-      let result = {};
-      for (let key of keys) {
-        let nScale = this.baseTable[key].scale;
-        let y = x / nScale;
-        result[key] = y;
-      }
-      return result;
-    }
+    doConvert: convert,
   }
 };

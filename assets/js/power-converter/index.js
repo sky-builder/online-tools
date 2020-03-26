@@ -1,12 +1,13 @@
-const wBaseTable = require('./w-base-table');
+const baseTable = require('./w-base-table');
+import convert from '../convert'
 
 let unitList = [];
 let keyValueMap = {};
 
-let keys = Object.keys(wBaseTable);
+let keys = Object.keys(baseTable);
 keys.forEach(key => {
   keyValueMap[key] = '';
-  let item = wBaseTable[key];
+  let item = baseTable[key];
   unitList.push({
     name: item.name,
     unit: item.unit,
@@ -19,24 +20,10 @@ export default {
     return {
       keyValueMap,
       unitList,
-      wBaseTable,
+      baseTable,
     }
   },
   methods: {
-    doConvert(value, unit) {
-      if (!Object.prototype.hasOwnProperty.call(this.wBaseTable, unit)) {
-        throw new Error(`unit *${unit}* not found.`);
-      }
-      let scale = this.wBaseTable[unit].scale;
-      let x = scale * value;
-      let keys = Object.keys(this.wBaseTable);
-      let result = {};
-      for (let key of keys) {
-        let nScale = this.wBaseTable[key].scale;
-        let y = x / nScale;
-        result[key] = y;
-      }
-      return result;
-    }
+    doConvert: convert,
   }
 }

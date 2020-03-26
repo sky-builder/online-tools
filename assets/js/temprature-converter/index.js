@@ -1,4 +1,8 @@
 function doConvert(value, unit) {
+  if (isNaN(Number(value))) {
+    window.alert('请输入数字');
+    return;
+  }
   // 华氏
   let f;
   // 开式
