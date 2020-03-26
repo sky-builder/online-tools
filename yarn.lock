@@ -1064,6 +1064,67 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@sentry/browser@^5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/browser/download/@sentry/browser-5.15.1.tgz#dd0eee0b17bcdae71c76c02b3ada7770cacfdcd0"
+  integrity sha1-3Q7uCxe82uccdsArOtp3cMrP3NA=
+  dependencies:
+    "@sentry/core" "5.15.1"
+    "@sentry/types" "5.15.1"
+    "@sentry/utils" "5.15.1"
+    tslib "^1.9.3"
+
+"@sentry/core@5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/core/download/@sentry/core-5.15.1.tgz#708f99a9fee8f9253993afdcb52f48c448167d7f"
+  integrity sha1-cI+Zqf7o+SU5k6/ctS9IxEgWfX8=
+  dependencies:
+    "@sentry/hub" "5.15.1"
+    "@sentry/minimal" "5.15.1"
+    "@sentry/types" "5.15.1"
+    "@sentry/utils" "5.15.1"
+    tslib "^1.9.3"
+
+"@sentry/hub@5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/hub/download/@sentry/hub-5.15.1.tgz#7c549518b0118b047c14ca6f70742b68d669bb48"
+  integrity sha1-fFSVGLARiwR8FMpvcHQraNZpu0g=
+  dependencies:
+    "@sentry/types" "5.15.1"
+    "@sentry/utils" "5.15.1"
+    tslib "^1.9.3"
+
+"@sentry/integrations@^5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/integrations/download/@sentry/integrations-5.15.1.tgz#e142511052d51fb1dee72801a7124637481af29d"
+  integrity sha1-4UJREFLVH7He5ygBpxJGN0ga8p0=
+  dependencies:
+    "@sentry/types" "5.15.1"
+    "@sentry/utils" "5.15.1"
+    tslib "^1.9.3"
+
+"@sentry/minimal@5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/minimal/download/@sentry/minimal-5.15.1.tgz#97a223b78a8ed03f803f33ce40f344901ed1eb2a"
+  integrity sha1-l6Ijt4qO0D+APzPOQPNEkB7R6yo=
+  dependencies:
+    "@sentry/hub" "5.15.1"
+    "@sentry/types" "5.15.1"
+    tslib "^1.9.3"
+
+"@sentry/types@5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/types/download/@sentry/types-5.15.1.tgz#18d207f34b8aaa30a0db53c32be1f49809e8f9ce"
+  integrity sha1-GNIH80uKqjCg21PDK+H0mAno+c4=
+
+"@sentry/utils@5.15.1":
+  version "5.15.1"
+  resolved "http://r.cnpmjs.org/@sentry/utils/download/@sentry/utils-5.15.1.tgz#7450e91e25fbfc770388716f2c00ac00ab43d572"
+  integrity sha1-dFDpHiX7/HcDiHFvLACsAKtD1XI=
+  dependencies:
+    "@sentry/types" "5.15.1"
+    tslib "^1.9.3"
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "http://r.cnpmjs.org/@types/color-name/download/@types/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -7747,6 +7808,11 @@ tslib@^1.9.0:
   version "1.10.0"
   resolved "http://r.cnpmjs.org/tslib/download/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
+
+tslib@^1.9.3:
+  version "1.11.1"
+  resolved "http://r.cnpmjs.org/tslib/download/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha1-6xXRKIJ/vuKEFUnhcfRe0zisfjU=
 
 tty-browserify@0.0.0:
   version "0.0.0"

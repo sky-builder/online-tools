@@ -29,6 +29,13 @@ vue.component("lazy-image", LazyImage);
 vue.component("full-screen-image", FullScreenImage);
 vue.component("drag-and-drop-uploader", DragAndDropUploader);
 vue.component("drag-and-drop-list", DragAndDropList);
+import * as Sentry from '@sentry/browser';
+import * as Integrations from '@sentry/integrations';
+
+Sentry.init({
+  dsn: 'https://57890b15376e4f089fd781bde3482b4e@sentry.io/5175895',
+  integrations: [new Integrations.Vue({vue, attachProps: true})],
+});
 const loadingDirective = {
   inserted: (el, binding) => {
     let isLoading = binding.value;
